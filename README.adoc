@@ -11,9 +11,10 @@ same as those derived with Special Relativity. The new system of
 kinematics should be built around these Doppler shifts, because what
 matters is when one has encounters with electromagnetic wavefronts.
 
-I do not use “Observer and Frame of Reference” methods, which belong
-to architecture and art. I instead use straightforward geometry. Thus
-the kinematics is not a “relativity.” It is simply “kinematics.”
+I do not use “Observer and Frame of Reference” methods. I instead use
+straightforward geometry, without assuming the existence of an
+“Observer,” and not necessarily using any coordinate system. Thus the
+kinematics is not a “relativity.” It is simply “kinematics.”
 
 There is no hint of either time dilation or length
 contraction.footnote:[That these distortions were probably fallacious
