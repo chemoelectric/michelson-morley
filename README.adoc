@@ -1,0 +1,26 @@
+= Electromagnetic transmissions are emissions of an inertial substance
+
+An antenna emits waves of an inertial substance. Thus the waves travel
+with the antenna. This is why the Michelson-Morley effect occurs.
+There is nothing strange about the Michelson-Morley effect. It is the
+most intuitively obvious thing ever, once an antenna is correctly
+visualized.
+
+I derive the longitudinal and transverse Doppler shifts. They are the
+same as those derived with Special Relativity. The new system of
+kinematics should be built around these Doppler shifts, because what
+matters is when one has encounters with electromagnetic wavefronts.
+
+I do not use “Observer and Frame of Reference” methods, which belong
+to architecture and art. I instead use straightforward geometry. Thus
+the kinematics is not a “relativity.” It is simply “kinematics.”
+
+There is no hint of either time dilation or length
+contraction.footnote:[That these distortions were probably fallacious
+was already discovered by A.{nbsp}F. Kracklauer, who drew a Minkowski
+diagram for the “Twin Paradox” in which there was no asymmetric aging.
+(I will supply references later.) The “Twin Paradox” is physically
+impossible, because the amount of aging difference depends on the
+amount of _inertial_ motion! Which is ludicrous. The acceleration that
+occurs at the pivot, which physics teachers emphasize, has no
+quantitative role.]
