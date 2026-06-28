@@ -32,9 +32,7 @@ Below I will derive the Doppler shifts formerly known as
 “relativistic” but henceforth to be known as “electromagnetic.” The
 reason for the renaming is I do not employ “Observer and
 Frame-of-Reference” methods and therefore the kinematics is not a
-“relativity.” Neither do I use either Galilean or Lorentz
-transformations. The methods are straightforward geometry, without a
-coordinate system.
+“relativity.”
 
 All calculations formerly delegated to Special Relativity should now
 be doable instead using the Doppler shifts. An exception is for
@@ -74,9 +72,9 @@ actual wavelengths are proportional to \(\lambda_1'\). Thus the
 Doppler shift is
 
 \[
-\begin{equation}
+\begin{equation*}
 \lambda_1' / \lambda_2' = \frac{1}{\sqrt{ { 1 - (v/c) ^ 2 } }}
-\end{equation}
+\end{equation*}
 \]
 
 Special Relativity gives the same prediction.
@@ -90,8 +88,54 @@ an amount due simply to the recession of the source. For
 electromagnetic Doppler shift, however, the wavefronts themselves
 _also_ are receding. Thus the situation is more complicated.
 
-The speed of a wavefront is now not \(c\) but \(c - v\). _The speed of
+The speed of a wavefront is now not \(c\) but \(c-v\). _The speed of
 light is not_ \(c\) _except relative to the light
-source_.footnote:[This is not a license for _Star Trek_. A starship
-would have to overtake its own electromagnetic substance, and would
-crush itself. Also, the mathematics here always requires \(v < c\).]
+source_.
+
+Similarly, if the transmission antenna is moving towards the
+stationary object, the speed of the wavefront is \(c+v\) instead
+of{nbsp}\(c\).footnote:[Though this is a “speed” greater than \(c\),
+it is not a license for _Star Trek_. A starship would have to overtake
+its own electromagnetic substance, and thus would crush itself.
+Furthermore, \(v\lt c\) always. People who extrapolate to \(c\le v\),
+thus obtaining singularities, imaginary numbers, etc., are called
+“ding-a-lings.”]
+
+We are going to want to deal with wavefronts themselves, which means
+spherical surfaces. Let us compute the surface area of a sphere. In a
+spherical coordinate system, the differential of surface area for a
+sphere of radius \(r\) is \( dA = r^2 \sin\varphi \, d\varphi \,
+d\vartheta \), and the area is the double integral
+
+\[
+\begin{equation*}
+A = r^2
+\mkern-1mu \int_0^{2\pi}
+\mkern-10mu \int_0^\pi
+\mkern-5mu \sin\varphi \, d\varphi \,
+d\vartheta = 4\pi r^2
+\end{equation*}
+\]
+
+Now suppose a receding antenna. You are on the surface of a sphere of
+area \( ( 1+v/c )^2 \), representing that the antenna is receding at
+speed \(v\). That, however, is in ordinary units of measurement. We
+should adjust for the wavefront speed, and will do so by using an
+areal scale of \( ( ( 1+v/c )( 1-v/c ) )^{-1} \). This scale is
+symmetric with respect to whether the antenna is receding or
+approaching. It is unity for a stationary antenna.
+[.big]#*FIXME: I need a proof this is the correct scale!!!!!*#
+
+
+
+//Let us deal with the variation in “speed of light” by a change of
+//scale in surface area.
+//
+//[cols="1,1"]
+//|===
+//|Electromagnetic speed|Scale factor
+//|\(c-v\)|\(1-(v/c)\)
+//|\(c\)|\(1\)
+//|\(c+v\)|\(1+(v/c)\)
+//|===
+
