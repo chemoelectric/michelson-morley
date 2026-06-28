@@ -1,0 +1,97 @@
+= Electromagnetic transmissions are emissions of an inertial substance
+Barry Schwartz
+:stem: latexmath
+:toc: left
+
+== Introduction
+
+Transmission antennas emit a substance radially at a velocity \(c\).
+The substance then moves inertially along with the antenna. Therefore
+the transmissions exhibit the Michelson-Morley effect. Special
+Relativity incorrectly introduces time dilation and length
+contraction, without bothering to explain the Michelson-Morley effect.
+Here we have an explanation, and there is no time dilation nor length
+contraction.
+
+Thus this new theory supplies a _mechanical_ explanation for the
+Michelson-Morley phenomenon: the waves themselves, instead of a
+luminiferous ether, are the inertial material. An antenna does not
+vibrate a medium. It emits vibrating electromagnetism.
+
+Special Relativity, on the other hand, supplies no reasonable
+explanation for the Michelson-Morley phenomenon. It is merely
+descriptive. And it veers into error when it introduces time dilation
+and length contraction.
+
+(I will later supply references to the work of A.F. Kracklauer, who
+shows how to interpret a Minkowski diagram so you do not get time
+dilation nor length contraction. A Minkowski diagram read this way
+should give the same results as my theory.)
+
+Below I will derive the Doppler shifts formerly known as
+“relativistic” but henceforth to be known as “electromagnetic.” The
+reason for the renaming is I do not employ “Observer and
+Frame-of-Reference” methods and therefore the kinematics is not a
+“relativity.” Neither do I use either Galilean or Lorentz
+transformations. The methods are straightforward geometry, without a
+coordinate system.
+
+All calculations formerly delegated to Special Relativity should now
+be doable instead using the Doppler shifts. An exception is for
+problems usually solved _incorrectly_ with Special Relativity, such as
+the “Twin Paradox.” That the usual solution _must_ be wrong should be
+obvious. Physics teachers often cleverly attribute the asymmetric
+aging to the acceleration at the pivot, but this is not so. The
+_amount_ of asymmetric aging is controlled by the _amount_ of inertial
+motion. Thus it is _inertial motion_ that is responsible for
+asymmetric aging, and this simply _must_ be impossible.
+
+Anyone who is just blows off such a situation ought to reconsider
+their role in the sciences, and perhaps should not be teaching
+physics. I imagine Einstein blew it off because he was very young and
+already an international celebrity for it! Often it is better to be
+rejected and search for the truth alone, over a lifetime.
+
+== The transverse electromagnetic Doppler shift
+
+This is the simpler of the two, for the motion is orthogonal to the
+radial direction, and the Doppler shift is entirely due to the
+inertial motion of the emitted substance.
+
+[.text-center]
+image:doppler-transverse.png[diagram of the transverse Doppler shift]
+
+In the figure above, the transmission antenna is depicted as
+motionless, and an object is moving leftwards with respect to
+it.footnote:[Of course, an alternative interpretation is that the
+transmission antenna _and its wavefronts_ are moving rightwards,
+relative to a stationary object. It is this motion of the wavefronts
+that would not happen if there were a luminiferous ether. Instead they
+would move with the ether.] If the object had stayed stationary,
+transmission wavelengths would have been proportional to
+\(\lambda_2'\). On account of the leftward motion at speed \(v\), the
+actual wavelengths are proportional to \(\lambda_1'\). Thus the
+Doppler shift is
+
+\[
+\begin{equation}
+\lambda_1' / \lambda_2' = \frac{1}{\sqrt{ { 1 - (v/c) ^ 2 } }}
+\end{equation}
+\]
+
+Special Relativity gives the same prediction.
+
+== The longitudinal electromagnetic Doppler shift
+
+Suppose we have a stationary object, from which a transmission antenna
+is receding at velocity \(v\). For “ordinary” Doppler shift in a
+stationary medium, this would result in each wavelength increasing by
+an amount due simply to the recession of the source. For
+electromagnetic Doppler shift, however, the wavefronts themselves
+_also_ are receding. Thus the situation is more complicated.
+
+The speed of a wavefront is now not \(c\) but \(c - v\). _The speed of
+light is not_ \(c\) _except relative to the light
+source_.footnote:[This is not a license for _Star Trek_. A starship
+would have to overtake its own electromagnetic substance, and would
+crush itself. Also, the mathematics here always requires \(v < c\).]

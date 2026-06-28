@@ -2,6 +2,7 @@ filenametemplate "%j-%3c.mps";
 prologues := 3;
 verbatimtex
   \documentclass{article}
+  \usepackage{ebgaramond}
   \usepackage{ebgaramond-maths}
   \begin{document}
   etex
@@ -52,12 +53,27 @@ verbatimtex
   draw origin -- final;
   draw start -- final;
 
-  label.lft(btex $c$ etex,
+  label.lft(btex \(\lambda_1'=c\) etex,
       (0.5 origin + 0.5 final) + (-4pt, 0));
-  label.bot(btex $v$ etex,
+  label.bot(btex \(v\) etex,
       (0.7 start + 0.3 final) + (0, 0));
-  label.rt(btex $d\lambda/dt=\sqrt{c^2-v^2}$ etex,
+  label.rt(btex \(\lambda_2'=\sqrt{c^2-v^2}\) etex,
       (0.5 origin + 0.5 start) + (2pt, 0));
+
+  label(btex
+      \(\frac{\lambda_1'}{\lambda_2'}=
+        \left(1-\left(\frac{v}{c}\right)^2\right)^{-\frac{1}{2}}
+        \) etex,
+      (0.8in,-0.4in));
+
+  label.top(btex \large
+      Transverse Doppler shift etex, origin + (0,3pc));
+  label.urt(btex \scriptsize
+      \(\lambda_1',\lambda_2'=\) radial wavelength
+      rates etex, origin + (3pc,1.5pc));
+  label.urt(btex \scriptsize
+      \(\lambda_1'\mkern1mu/\mkern1mu\lambda_2'=\) Doppler shift
+      etex, origin + (3pc,0.5pc));
 
   currentpicture := currentpicture scaled 2;
 endfig;
