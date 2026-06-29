@@ -1,4 +1,4 @@
-= Electromagnetic transmissions are emissions of an inertial substance
+= Electromagnetic waves have inertia
 Barry Schwartz
 :stem: latexmath
 :toc: left
