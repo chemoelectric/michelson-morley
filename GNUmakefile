@@ -2,6 +2,8 @@ ASCDOC := asciidoctor
 MPOST := mpost
 LATEX := latex
 MAGICK := magick
+SCP := scp
+WEBSITE := crudfact@crudfactory.com:www/website_3f7b2fcc
 
 .DEFAULT_GOAL := default
 
@@ -42,3 +44,14 @@ veryclean::
 all:: scale-equivalence.png
 veryclean::
 	-rm -f scale-equivalence.png
+
+.PHONY: upload upload-html #upload-pdf
+upload: upload-html #upload-pdf
+upload-html: \
+		michelson-morley.html \
+		doppler-transverse.png \
+		scale-equivalence.png
+	$(SCP) $(<) $(WEBSITE)/index.html
+	$(SCP) $(filter %.png,$(^)) $(WEBSITE)/
+#upload-pdf:
+#	$(SCP) $(^) $(WEBSITE)
