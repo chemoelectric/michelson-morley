@@ -8,7 +8,7 @@ Barry Schwartz
 [.small]#Copyright © 2026 Barry Schwartz. This essay is licensed under
 a link:{license-url}[Creative Commons Attribution-NoDerivatives 4.0
 International License]. It is available as a webpage at
-https://bell-multivectors.crudfactory.com/ and in source form at
+https://michelson-morley.crudfactory.com/ and in source form at
 https://github.com/chemoelectric/michelson-morley#
 
 == Introduction
