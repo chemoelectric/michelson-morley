@@ -27,11 +27,15 @@ verbatimtex
   draw corner -- right;
 
   label.lft(btex \( v/c \) etex,
-      (0.5 corner + 0.5 top));
+      (0.5 corner + 0.5 top) - (2thin,0));
   label.urt(btex \( 1 \) etex,
-      (0.5 top + 0.5 right));
+      (0.5 top + 0.5 right) + (0,2thin));
   label.bot(btex \( \sqrt{1 - (v/c)^2} \) etex,
-      (0.5 corner + 0.5 right));
+      (0.5 corner + 0.5 right) - (0,1thin));
+
+  d := 0.1wide;
+  draw (corner + (0,d) -- corner + (d,d));
+  draw (corner + (d,0) -- corner + (d,d));
 
   currentpicture := currentpicture scaled 2;
 endfig;

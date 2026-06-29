@@ -121,21 +121,40 @@ Now suppose a receding antenna. You are on the surface of a sphere of
 area \( ( 1+v/c )^2 \), representing that the antenna is receding at
 speed \(v\). That, however, is in ordinary units of measurement. We
 should adjust for the wavefront speed, and will do so by using an
-areal scale of \( ( ( 1+v/c )( 1-v/c ) )^{-1} \). This scale is
-symmetric with respect to whether the antenna is receding or
-approaching. It is unity for a stationary antenna.
-[.big]#*FIXME: I need a proof this is the correct scale!!!!!*#
+areal scale of \( ( ( 1+v/c )( 1-v/c ) )^{-1} \). This scale is the
+square of a factor familiar from Special Relativity:
 
+\[
+\begin{equation*}
+\gamma = \sqrt{\frac{1}{ ( 1+v/c ) ( 1-v/c ) }}
+       = \frac{1}{\sqrt{1-(v/c)^2}}
+\end{equation*}
+\]
 
+Its appropriateness as the radial scale factor can be seen from the
+following diagram:footnote:[[.big]#*PROVE
+IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*#]
 
-//Let us deal with the variation in “speed of light” by a change of
-//scale in surface area.
-//
-//[cols="1,1"]
-//|===
-//|Electromagnetic speed|Scale factor
-//|\(c-v\)|\(1-(v/c)\)
-//|\(c\)|\(1\)
-//|\(c+v\)|\(1+(v/c)\)
-//|===
+[.text-center]
+image:scale-equivalence.png[right triangle depicting the radial scale equivalence]
 
+The scaled sphere area is thus
+
+\[
+\begin{equation*}
+A' = 4\pi \, \frac{ ( 1+v/c )^2 }{ ( 1+v/c ) ( 1-v/c ) }
+   = 4\pi \, \frac{ 1+v/c }{ 1-v/c }
+\end{equation*}
+\]
+
+and its radius is
+
+\[
+\begin{equation*}
+r' = \sqrt{\frac{ 1+v/c }{ 1-v/c }}
+\end{equation*}
+\]
+
+This radius is the longitudinal Doppler shift for a receding antenna.
+If the sign of \(v\) reverses it becomes the Doppler shift for an
+approaching antenna. For \(v=0\) there is no Doppler shift.

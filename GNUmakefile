@@ -36,3 +36,11 @@ clean::
 all:: doppler-transverse.png
 clean::
 	-rm -f doppler-transverse.png
+
+all:: scale-equivalence.pdf
+clean::
+	-rm -f scale-equivalence.pdf
+
+all:: scale-equivalence.png
+clean::
+	-rm -f scale-equivalence.png
