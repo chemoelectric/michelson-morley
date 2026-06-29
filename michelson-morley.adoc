@@ -158,7 +158,14 @@ it*:footnote:[[.big]#*PROVE
 IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*#
 I am not a Ramanujan who can just whip up a proof that is right half
 the time. I do not yet know how to prove this, though it _must_ be
-correct and so there _is_ a proof.]
+correct and so there _is_ a proof.]footnote:[Okay, I have some ideas
+leading towards proof of this Doppler shift. Probably thanks to
+Imitrex and sleep. The first thing is that we have a wavefront moving
+at relative speed \(1-v/c\) over a relative distance \(1+v/c\), as
+opposed to a wavefront from a stationary antenna, where both those
+quantities are unity. Also the radius of the wavefront is \(1+v/c\)
+instead of unity. Thus we have every factor in the expression that
+then gets square-rooted!]
 
 [.text-center]
 image:scale-equivalence.png[right triangle depicting the radial scale equivalence]

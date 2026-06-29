@@ -41,6 +41,10 @@ all:: doppler-transverse.png
 veryclean::
 	-rm -f doppler-transverse.png
 
+all:: doppler-longitudinal.png
+veryclean::
+	-rm -f doppler-longitudinal.png
+
 all:: scale-equivalence.png
 veryclean::
 	-rm -f scale-equivalence.png
