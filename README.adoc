@@ -1,4 +1,4 @@
-= Electromagnetic transmissions are emissions of an inertial substance
+= Electromagnetic waves have inertia
 
 An antenna emits waves of an inertial substance. Thus the waves travel
 with the antenna. This is why the Michelson-Morley effect occurs.
