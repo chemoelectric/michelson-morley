@@ -21,12 +21,24 @@ vibrate a medium. It emits vibrating electromagnetism.
 Special Relativity, on the other hand, supplies no reasonable
 explanation for the Michelson-Morley phenomenon. It is merely
 descriptive. And it veers into error when it introduces time dilation
-and length contraction.
-
-(I will later supply references to the work of A.F. Kracklauer, who
-shows how to interpret a Minkowski diagram so you do not get time
-dilation nor length contraction. A Minkowski diagram read this way
-should give the same results as my theory.)
+and length contraction.footnote:[I will later supply references to the
+work of A.F. Kracklauer, who shows how to interpret a Minkowski
+diagram so you do not get time dilation and length contraction. A
+Minkowski diagram read that way might give the same results as my
+theory. I once used Einstein’s tensor notation to describe the
+difference between Einstein’s and Kracklauer’s approaches. There
+appeared to be only a different constant tensor factor, with the
+notation favoring Einstein’s version of the theory by making that
+constant an identity, and thus leading to General Relativity. However,
+I have lost those notes, and also did not put in an effort to retain
+skill in that kind of mathematics. Needless to say I would not seek a
+gravitational or unified field theory by Einstein’s methods, but
+instead would go back to doing it the way Maxwell and Heaviside did.
+However, I would favor geometric algebra over vector analysis, if I
+knew Maxwell’s theory in geometric algebra form. In Euclidean
+geometric algebra it cannot be too different, but I would especially
+like to know Maxwell’s theory in _conformal_ geometric algebra or
+something similar.]
 
 Below I will derive the Doppler shifts formerly known as
 “relativistic” but henceforth to be known as “electromagnetic.” The
@@ -131,9 +143,14 @@ square of a factor familiar from Special Relativity:
 \end{equation*}
 \]
 
-Its appropriateness as the radial scale factor can be seen from the
-following diagram:footnote:[[.big]#*PROVE
-IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*#]
+It also shows up above as solution to the transverse Doppler shift.
+Its appropriateness as the radial scale factor can be guessed from the
+following diagram, *although I need to prove
+it*:footnote:[[.big]#*PROVE
+IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*#
+I am not a Ramanujan who can just whip up a proof that is right half
+the time. I do not yet know how to prove this, though it _must_ be
+correct and so there _is_ a proof.]
 
 [.text-center]
 image:scale-equivalence.png[right triangle depicting the radial scale equivalence]
@@ -147,7 +164,7 @@ A' = 4\pi \, \frac{ ( 1+v/c )^2 }{ ( 1+v/c ) ( 1-v/c ) }
 \end{equation*}
 \]
 
-and its radius is
+and the sphere’s radius is
 
 \[
 \begin{equation*}
@@ -156,5 +173,8 @@ r' = \sqrt{\frac{ 1+v/c }{ 1-v/c }}
 \]
 
 This radius is the longitudinal Doppler shift for a receding antenna.
-If the sign of \(v\) reverses it becomes the Doppler shift for an
+You can convince yourself of this. I chose the sphere so it would
+be so.
+
+If the sign of \(v\) reverses the Doppler shift becomes that for an
 approaching antenna. For \(v=0\) there is no Doppler shift.

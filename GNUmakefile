@@ -1,3 +1,4 @@
+ASCDOC := asciidoctor
 MPOST := mpost
 LATEX := latex
 MAGICK := magick
@@ -12,35 +13,32 @@ MAGICK := magick
 .PHONY: default all
 default: all
 
-.PHONY: mostlyclean clean
+.PHONY: mostlyclean clean veryclean
 clean:: mostlyclean
+veryclean:: clean
 
 mostlyclean::
 	-rm -f *-001.mps
 	-rm -f *.{mpx,log}
 	-rm -f mpxerr.*
 
+%.html: %.adoc
+	$(ASCDOC) -b html5 -S safe $(<) -o $(@)
+
 %-001.mps: %.mp
 	$(MPOST) --tex=$(LATEX) $(<)
 
-%.pdf: %-001.mps
+%.png: %-001.mps
 	$(MAGICK) $(<) $(@)
 
-%.png: %-001.mps
-	$(MAGICK) $(<) -flatten $(@)
-
-all:: doppler-transverse.pdf
-clean::
-	-rm -f doppler-transverse.pdf
+all:: michelson-morley.html
+veryclean::
+	-rm -f michelson-morley.html
 
 all:: doppler-transverse.png
-clean::
+veryclean::
 	-rm -f doppler-transverse.png
 
-all:: scale-equivalence.pdf
-clean::
-	-rm -f scale-equivalence.pdf
-
 all:: scale-equivalence.png
-clean::
+veryclean::
 	-rm -f scale-equivalence.png
