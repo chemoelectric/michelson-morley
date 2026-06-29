@@ -6,7 +6,11 @@ There is nothing strange about the Michelson-Morley effect. It is the
 most intuitively obvious thing ever, once an antenna is correctly
 visualized.
 
-I derive the longitudinal and transverse Doppler shifts. They are the
+If you believe in photons and that they have momentum, then you must
+accept that they would be a sufficient explanation for the
+Michelson-Morley effect. Special Relativity would be unnecessary.
+
+I derive the transverse and longitudinal Doppler shifts. They are the
 same as those derived with Special Relativity. The new system of
 kinematics should be built around these Doppler shifts, because what
 matters is when one has encounters with electromagnetic wavefronts.
