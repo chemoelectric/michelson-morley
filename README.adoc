@@ -8,7 +8,14 @@ visualized.
 
 If you believe in photons and that they have momentum, then you must
 accept that they would be a sufficient explanation for the
-Michelson-Morley effect. Special Relativity would be unnecessary.
+Michelson-Morley effect. Special Relativity would be
+unnecessary.footnote:[I myself do not believe in photons as commonly
+described, although I do believe electromagnetic material of some kind
+is probably emitted in “quanta” due to resonance effects not yet
+described. One thing I would like to do is to see if I can derive a
+mass density for electromagnetic transmissions. Thus instead of “zero
+rest mass” photons we would have a continuous material with a mass
+density.]
 
 I derive the transverse and longitudinal Doppler shifts. They are the
 same as those derived with Special Relativity. The new system of
