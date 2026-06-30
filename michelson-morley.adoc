@@ -167,11 +167,8 @@ Doppler shifts are thus the following square roots:
 | \( \sqrt{\frac{ 1-v/c }{ 1+v/c }} \)
 |===
 
-To be more rigorous, however, we need to show that in each case the
-stationary object encounters the same wavefront.
-
-[.big]#*FIXME: PUT A PROOF HERE, SUCH AS BY HAVING THE SAME WAVEFRONT SPEED
-WITHOUT ANTENNA RECESSION.*#
+[.big]#*FIXME: PUT A PROOF HERE, SUCH AS BY A TIMED PROCESS OF
+MULTIPLE MOVING OBJECTS.*#
 
 Now let us criticize Special Relativity. In all three cases in the
 table above (including the stationary case as \(v=0\)) the Doppler
@@ -196,8 +193,8 @@ image:scale-equivalence.png[right triangle with legs v/c and sqrt(1 - (v/c)(v/c)
 There is no “hocus pocus” in that.
 
 One wonders how physicists missed the significance of \( 1 - (v/c)^2 =
-( 1+v/c ) ( 1-v/c ) \). This is a clear indication that the expression
-is the product of two speeds. What speeds? The question demands an
+( 1+v/c ) ( 1-v/c ) \). This is a clear indication the expression is
+the product of two speeds. What speeds? The question demands an
 answer. The answer is that one is the speed of the antenna or light
 source, relative to the stationary object, and the other is the speed
 of a wavefront relative to the stationary object. At the dawn of the
