@@ -152,8 +152,7 @@ radial scaling by \( 1/{\sqrt{1-( v/c )^2}} \) to account for
 wavefront speed, is the same quantity as a longitudinal Doppler shift.
 The Doppler shifts are thus the following square roots:
 
-[cols=">.^1,^.^1"]
-[%autowidth]
+[cols="^.^1e,^.^1",options="header,autowidth"]
 |===
 |Antenna motion|Wavelength Doppler shift
 
