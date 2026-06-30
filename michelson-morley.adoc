@@ -194,3 +194,17 @@ a Doppler shift-free measurement scale:
 image:scale-equivalence.png[right triangle with legs v/c and sqrt(1 - (v/c)(v/c)), and hypotenuse 1.]
 
 There is no “hocus pocus” in that.
+
+One wonders how physicists missed the significance of \( 1 - (v/c)^2 =
+( 1+v/c ) ( 1-v/c ) \). This is a clear indication that the expression
+is the product of two speeds. What speeds? The question demands an
+answer. The answer is that one is the speed of the antenna or light
+source, relative to the stationary object, and the other is the speed
+of a wavefront relative to the stationary object. At the dawn of the
+20th century, very young Einstein instead mistakenly assumes the speed
+of a wavefront is always \(c\). He arrives at absurd conclusions and
+becomes a celebrity precisely because of that, practically
+guaranteeing he will be stuck with the theory for life.
+
+No one bothers looking for the actual cause of the Michelson-Morley
+effect. This turns out to be mundane.
