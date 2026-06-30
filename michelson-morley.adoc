@@ -112,8 +112,8 @@ The speed of a wavefront is now not \(c\) but \(c-v\). _The speed of
 light is not_ \(c\) _except relative to the light
 source_.
 
-Similarly, if the transmission antenna is moving towards the
-stationary object, the speed of the wavefront is \(c+v\) instead
+Similarly, if the transmission antenna is approaching the stationary
+object, the speed of the wavefront is \(c+v\) instead
 of{nbsp}\(c\).footnote:[Though this is a “speed” greater than \(c\),
 it is not a license for _Star Trek_. A starship would have to overtake
 its own electromagnetic substance, and thus would crush itself.
@@ -121,75 +121,112 @@ Furthermore, \(v\lt c\) always. People who extrapolate to \(c\le v\),
 thus obtaining singularities, imaginary numbers, etc., are called
 “ding-a-lings.”]
 
-We are going to want to deal with wavefronts themselves, which means
-spherical surfaces. Let us compute the surface area of a sphere. In a
-spherical coordinate system, the differential of surface area for a
-sphere of radius \(r\) is \( dA = r^2 \sin\varphi \, d\varphi \,
-d\vartheta \), and the area is the double integral
+Let me first do an analysis of the kind you might use on an
+examination where they expect you to devise a time-saving trick.
+Consider spheres of radius \(1+v/c\), \(1\pm0/c\), and \(1-v/c\),
+representing receding, stationary, and approaching antennas (in
+normalized units). What radial scaling factor gives a result that is
+symmetric and has the speed of the wavefront in it? The nicest answer
+is if the scaling factor is \( \frac{1}{\sqrt{ ( 1+v/c ) ( 1-v/c ) }}
+\), or, in other words,
 
 \[
 \begin{equation*}
-A = r^2
-\mkern-1mu \int_0^{2\pi}
-\mkern-10mu \int_0^\pi
-\mkern-5mu \sin\varphi \, d\varphi \,
-d\vartheta = 4\pi r^2
+\frac{1}{\sqrt{1-( v/c )^2}}
 \end{equation*}
 \]
 
-Now suppose a receding antenna. You are on the surface of a sphere of
-area \( ( 1+v/c )^2 \), representing that the antenna is receding at
-speed \(v\). That, however, is in ordinary units of measurement. We
-should adjust for the wavefront speed, and will do so by using an
-areal scale of \( ( ( 1+v/c )( 1-v/c ) )^{-1} \). This scale is the
-square of a factor familiar from Special Relativity:
+For then you get respective surface areas that are \( 4\pi \, \frac{
+1+v/c }{ 1-v/c } \), \(4\pi\), or \( 4\pi \, \frac{ 1-v/c }{ 1+v/c }
+\).footnote:[In a spherical coordinate system, the differential of
+surface area for a sphere of radius \(r\) is \( dA = r^2 \sin\varphi
+\, d\varphi \, d\vartheta \). Therefore the area is the double
+integral \begin{equation*} A = r^2 \mkern-1mu \int_0^{2\pi}
+\mkern-10mu \int_0^\pi \mkern-5mu \sin\varphi \, d\varphi \,
+d\vartheta = 4\pi r^2 \end{equation*}] In each case, this is \(4\pi\)
+times the radius divided by the speed of the wavefront relative to the
+stationary object.
 
-\[
-\begin{equation*}
-\gamma = \sqrt{\frac{1}{ ( 1+v/c ) ( 1-v/c ) }}
-       = \frac{1}{\sqrt{1-(v/c)^2}}
-\end{equation*}
-\]
+The radius of one of the foregoing “normalized units” spheres, after
+radial scaling by \( 1/{\sqrt{1-( v/c )^2}} \) to account for
+wavefront speed, is the same quantity as a longitudinal Doppler shift.
+The Doppler shifts are thus the following square roots:
 
-It also shows up above as solution to the transverse Doppler shift.
-Its appropriateness as the radial scale factor can be guessed from the
-following diagram, *although I need to prove
-it*:footnote:[[.big]#*PROVE
-IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*#
-I am not a Ramanujan who can just whip up a proof that is right half
-the time. I do not yet know how to prove this, though it _must_ be
-correct and so there _is_ a proof.]footnote:[Okay, I have some ideas
-leading towards proof of this Doppler shift. Probably thanks to
-Imitrex and sleep. The first thing is that we have a wavefront moving
-at relative speed \(1-v/c\) over a relative distance \(1+v/c\), as
-opposed to a wavefront from a stationary antenna, where both those
-quantities are unity. Also the radius of the wavefront is \(1+v/c\)
-instead of unity. Thus we have every factor in the expression that
-then gets square-rooted!]
+[cols=">.^1,^.^1"]
+[%autowidth]
+|===
+|Antenna motion|Wavelength Doppler shift
 
-[.text-center]
-image:scale-equivalence.png[right triangle depicting the radial scale equivalence]
+|receding
+| \( \sqrt{\frac{ 1+v/c }{ 1-v/c }} \)
 
-The scaled sphere area is thus
+|stationary
+| 1
 
-\[
-\begin{equation*}
-A' = 4\pi \, \frac{ ( 1+v/c )^2 }{ ( 1+v/c ) ( 1-v/c ) }
-   = 4\pi \, \frac{ 1+v/c }{ 1-v/c }
-\end{equation*}
-\]
+|approaching
+| \( \sqrt{\frac{ 1-v/c }{ 1+v/c }} \)
+|===
 
-and the sphere’s radius is
 
-\[
-\begin{equation*}
-r' = \sqrt{\frac{ 1+v/c }{ 1-v/c }}
-\end{equation*}
-\]
 
-This radius is the longitudinal Doppler shift for a receding antenna.
-You can convince yourself of this. I chose the sphere so it would
-be so.
 
-If the sign of \(v\) reverses the Doppler shift becomes that for an
-approaching antenna. For \(v=0\) there is no Doppler shift.
+
+
+// We are going to want to deal with wavefronts themselves, which means
+// spherical surfaces. 
+// Now suppose a receding antenna. You are on the surface of a sphere of
+// area \( ( 1+v/c )^2 \), representing that the antenna is receding at
+// speed \(v\). That, however, is in ordinary units of measurement. We
+// should adjust for the wavefront speed, and will do so by using an
+// areal scale of \( \frac{1}{ ( 1+v/c )( 1-v/c ) } \). This scale is the
+// square of a factor familiar from Special Relativity:
+// 
+// \[
+// \begin{equation*}
+// \gamma = \sqrt{\frac{1}{ ( 1+v/c ) ( 1-v/c ) }}
+//        = \frac{1}{\sqrt{1-(v/c)^2}}
+// \end{equation*}
+// \]
+// 
+// It also shows up above as solution to the transverse Doppler shift.
+// Its appropriateness as the radial scale factor can be guessed from the
+// following diagram, *although I need to prove
+// it*:footnote:[[.big]#*PROVE
+// IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*#
+// I am not a Ramanujan who can just whip up a proof that is right half
+// the time. I do not yet know how to prove this, though it _must_ be
+// correct and so there _is_ a proof.]footnote:[Okay, I have some ideas
+// leading towards proof of this Doppler shift. Probably thanks to
+// Imitrex and sleep. The first thing is that we have a wavefront moving
+// at relative speed \(1-v/c\) over a relative distance \(1+v/c\), as
+// opposed to a wavefront from a stationary antenna, where both those
+// quantities are unity. Also the radius of the wavefront is \(1+v/c\)
+// instead of unity. Thus we have every factor in the expression that
+// then gets square-rooted!]
+// 
+// [.text-center]
+// image:scale-equivalence.png[right triangle depicting the radial scale equivalence]
+// 
+// The scaled sphere area is thus
+// 
+// \[
+// \begin{equation*}
+// A' = 4\pi \, \frac{ ( 1+v/c )^2 }{ ( 1+v/c ) ( 1-v/c ) }
+//    = 4\pi \, \frac{ 1+v/c }{ 1-v/c }
+// \end{equation*}
+// \]
+// 
+// and the sphere’s radius is
+// 
+// \[
+// \begin{equation*}
+// r' = \sqrt{\frac{ 1+v/c }{ 1-v/c }}
+// \end{equation*}
+// \]
+// 
+// This radius is the longitudinal Doppler shift for a receding antenna.
+// You can convince yourself of this. I chose the sphere so it would
+// be so.
+// 
+// If the sign of \(v\) reverses the Doppler shift becomes that for an
+// approaching antenna. For \(v=0\) there is no Doppler shift.
