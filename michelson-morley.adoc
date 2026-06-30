@@ -147,11 +147,12 @@ d\vartheta = 4\pi r^2 \end{equation*}] In each case, this is \(4\pi\)
 times the radius divided by the speed of the wavefront relative to the
 stationary object.
 
-The radius of one of the foregoing “normalized units” spheres, after
-radial scaling by \( 1/{\sqrt{1-( v/c )^2}} \) to account for
-wavefront speed, is the same quantity as a longitudinal Doppler shift.
-The Doppler shifts are thus the following square roots:
+The radius of one of the foregoing “normalized” spheres, after radial
+scaling by \( 1/{\sqrt{1-( v/c )^2}} \) to account for wavefront
+speed, is the same quantity as a longitudinal Doppler shift. The
+Doppler shifts are thus the following square roots:
 
+[.center]
 [cols="^.^1e,^.^1",options="header,autowidth"]
 |===
 |Antenna motion|Wavelength Doppler shift
@@ -166,66 +167,30 @@ The Doppler shifts are thus the following square roots:
 | \( \sqrt{\frac{ 1-v/c }{ 1+v/c }} \)
 |===
 
+To be more rigorous, however, we need to show that in each case the
+stationary object encounters the same wavefront.
 
+[.big]#*FIXME: PUT A PROOF HERE, SUCH AS BY HAVING THE SAME WAVEFRONT SPEED
+WITHOUT ANTENNA RECESSION.*#
 
+Now let us criticize Special Relativity. In all three cases in the
+table above (including the stationary case as \(v=0\)) the Doppler
+shifted full radius has the form \( \sqrt{ ( 1+v/c ) ( 1-v/c ) } =
+\sqrt{ 1 - (v/c)^2 } \). Special Relativity would say this is a length
+contraction. Such a conclusion is mystical “hocus pocus” that the 20th
+century mistook for physics. Mathematicians wrote their new theories
+in a form devoid of real-world meaning (as reduction to set theory
+instead of as axiomatic systems), and a general decline took hold in
+scientific reasoning. But I will not let it stand. The
+Michelson-Morley effect is explained by electromagnetic waves having
+momentum, and a mathematical result cannot shrink physical objects. We
+have merely derived the same verbal result three ways, and now wish to
+know what that means.
 
+The following diagram suggests we regard \( \sqrt{ 1 - (v/c)^2 } \) as
+a Doppler shift-free measurement scale:
 
+[.text-center]
+image:scale-equivalence.png[right triangle with legs v/c and sqrt(1 - (v/c)(v/c)), and hypotenuse 1.]
 
-// We are going to want to deal with wavefronts themselves, which means
-// spherical surfaces. 
-// Now suppose a receding antenna. You are on the surface of a sphere of
-// area \( ( 1+v/c )^2 \), representing that the antenna is receding at
-// speed \(v\). That, however, is in ordinary units of measurement. We
-// should adjust for the wavefront speed, and will do so by using an
-// areal scale of \( \frac{1}{ ( 1+v/c )( 1-v/c ) } \). This scale is the
-// square of a factor familiar from Special Relativity:
-// 
-// \[
-// \begin{equation*}
-// \gamma = \sqrt{\frac{1}{ ( 1+v/c ) ( 1-v/c ) }}
-//        = \frac{1}{\sqrt{1-(v/c)^2}}
-// \end{equation*}
-// \]
-// 
-// It also shows up above as solution to the transverse Doppler shift.
-// Its appropriateness as the radial scale factor can be guessed from the
-// following diagram, *although I need to prove
-// it*:footnote:[[.big]#*PROVE
-// IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*#
-// I am not a Ramanujan who can just whip up a proof that is right half
-// the time. I do not yet know how to prove this, though it _must_ be
-// correct and so there _is_ a proof.]footnote:[Okay, I have some ideas
-// leading towards proof of this Doppler shift. Probably thanks to
-// Imitrex and sleep. The first thing is that we have a wavefront moving
-// at relative speed \(1-v/c\) over a relative distance \(1+v/c\), as
-// opposed to a wavefront from a stationary antenna, where both those
-// quantities are unity. Also the radius of the wavefront is \(1+v/c\)
-// instead of unity. Thus we have every factor in the expression that
-// then gets square-rooted!]
-// 
-// [.text-center]
-// image:scale-equivalence.png[right triangle depicting the radial scale equivalence]
-// 
-// The scaled sphere area is thus
-// 
-// \[
-// \begin{equation*}
-// A' = 4\pi \, \frac{ ( 1+v/c )^2 }{ ( 1+v/c ) ( 1-v/c ) }
-//    = 4\pi \, \frac{ 1+v/c }{ 1-v/c }
-// \end{equation*}
-// \]
-// 
-// and the sphere’s radius is
-// 
-// \[
-// \begin{equation*}
-// r' = \sqrt{\frac{ 1+v/c }{ 1-v/c }}
-// \end{equation*}
-// \]
-// 
-// This radius is the longitudinal Doppler shift for a receding antenna.
-// You can convince yourself of this. I chose the sphere so it would
-// be so.
-// 
-// If the sign of \(v\) reverses the Doppler shift becomes that for an
-// approaching antenna. For \(v=0\) there is no Doppler shift.
+There is no “hocus pocus” in that.
