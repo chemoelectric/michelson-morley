@@ -195,9 +195,9 @@ There is no “hocus pocus” in that.
 One wonders how physicists missed the significance of \( 1 - (v/c)^2 =
 ( 1+v/c ) ( 1-v/c ) \). This is a clear indication the expression is
 the product of two speeds. What speeds? The question demands an
-answer. The answer is that they are the speeds of wavefronts on either
-side of a longitudinally moving antenna or light source, with respect
-to a stationary object. At the dawn of the 20th century, very young
+answer. They are the speeds of wavefronts on either side of a
+longitudinally moving antenna or light source, with respect to a
+stationary object. At the dawn of the 20th century, very young
 Einstein instead mistakenly assumes the speed of a wavefront is always
 \(c\). He arrives at absurd conclusions and becomes a celebrity
 precisely because of that, practically guaranteeing he will be stuck
