@@ -54,6 +54,7 @@ upload: upload-html #upload-pdf
 upload-html: \
 		michelson-morley.html \
 		doppler-transverse.png \
+		doppler-longitudinal.png \
 		scale-equivalence.png
 	$(SCP) $(<) $(WEBSITE)/index.html
 	$(SCP) $(filter %.png,$(^)) $(WEBSITE)/
