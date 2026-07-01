@@ -153,8 +153,14 @@ inverted because we want a shift in wavelength:
 | \( \sqrt{\frac{ 1-v/c }{ 1+v/c }} \)
 |===
 
-[.big]#*FIXME: PUT A PROOF HERE, SUCH AS BY A TIMED PROCESS OF
-MULTIPLE MOVING OBJECTS.*#
+// A good guess will not suffice, however. We need proof. For that, refer
+// to the following diagram. It depicts circles of radius \(r\), \(2r\),
+// and \(3r\), whose centers are separated by a distance{nbsp}\(d\). The
+// proof requires showing \(p = \sqrt{\frac{r-d}{r+d}}\) and \(q =
+// \sqrt{\frac{r+d}{r-d}}\).
+
+*THE FOLLOWING DIAGRAM IS WRONG* It is a diagram for if there were a
+ luminiferous ether.
 
 [.text-center]
 image:doppler-longitudinal.png[nested circles with centers offsetted and certain dimensions marked with letters r, d, p, and q]
