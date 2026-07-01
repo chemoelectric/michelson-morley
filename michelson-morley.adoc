@@ -70,7 +70,9 @@ physics. I imagine Einstein blew it off because he was very young and
 already an international celebrity for it! Often it is better to be
 rejected and search for the truth alone, over a lifetime.
 
-== The transverse electromagnetic Doppler shift
+== Electromagnetic Doppler shift
+
+=== The transverse electromagnetic Doppler shift
 
 This is the simpler of the two, for the motion is orthogonal to the
 radial direction, and the Doppler shift is entirely due to the
@@ -99,7 +101,7 @@ Doppler shift is
 
 Special Relativity gives the same prediction.
 
-== The longitudinal electromagnetic Doppler shift
+=== The longitudinal electromagnetic Doppler shift
 
 Suppose we have a stationary object, from which a transmission antenna
 is receding at velocity \(v\). For “ordinary” Doppler shift in a
@@ -226,3 +228,28 @@ But is it the job of a physicist to seek mundane explanations? Or is
 it the job of a physicist to manage a portfolio of citations? For if
 this mundane explanation be true then many a portfolio is rendered
 worthless.
+
+=== The general electromagnetic Doppler shift
+
+Now that we know electromagnetic Doppler shift is due to wavefronts
+moving inertially along with their sources, it would seem prudent to
+dispense with the notions of “transverse” and “longitudinal” Doppler
+shifts. The latter is merely a holdover from conventional Doppler
+shift, and the former is a misattribution to “time dilation.” Instead
+they are both due to the timings of encounters with wavefronts. The
+actual Doppler shift is in fact not only a function of relative motion
+between a transmitter and another object, but also of the shapes of
+wavefronts. If the transmitter is a complicated phase array, this can
+be important.
+
+But let us restrict ourselves to a simple transmission antenna and
+wavefronts that are spherical with respect to the antenna. Then what
+will be the points of encounter of an object moving inertially with
+respect to the antenna?
+
+One way to phrase this question is to ask the following: assuming the
+antenna transmits wavefronts \(f_{t_\text{xmit}}(t),\,
+t_\text{xmit}\in\{t_1,t_2,t_3,\ldots\}\), then what are the times
+\(t_e(t_\text{xmit})\) of the points of encounter of the object with
+those wavefronts, and at what points in space \(g(t_e)\) do these
+encounters occur?
