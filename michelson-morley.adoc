@@ -156,6 +156,10 @@ inverted because we want a shift in wavelength:
 [.big]#*FIXME: PUT A PROOF HERE, SUCH AS BY A TIMED PROCESS OF
 MULTIPLE MOVING OBJECTS.*#
 
+[.text-center]
+image:doppler-longitudinal.png[nested circles with centers offsetted and certain dimensions marked with letters r, d, p, and q]
+
+
 Now let us criticize Special Relativity. The scaling factor guessed at
 above is \( 1/\sqrt{ 1 - (v/c)^2 } \). Special Relativity would say
 this is a time dilation, and that \( \sqrt{ 1 - (v/c)^2 } \) is a
