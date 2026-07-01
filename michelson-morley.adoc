@@ -153,18 +153,38 @@ inverted because we want a shift in wavelength:
 | \( \sqrt{\frac{ 1-v/c }{ 1+v/c }} \)
 |===
 
-// A good guess will not suffice, however. We need proof. For that, refer
-// to the following diagram. It depicts circles of radius \(r\), \(2r\),
-// and \(3r\), whose centers are separated by a distance{nbsp}\(d\). The
-// proof requires showing \(p = \sqrt{\frac{r-d}{r+d}}\) and \(q =
-// \sqrt{\frac{r+d}{r-d}}\).
+Referring to the 1993 edition of _CRC Standard Curves and
+Surfaces_,footnote:[David H. von Seggern, _CRC standard curves and
+surfaces_, CRC Press, Boca Raton, FL, 1993.] page 66, we find that \(
+\pm y = c \,\sqrt{ a^2 - x^2 } \) is the equation of an ellipse that
+is the distortion of a circle of radius{nbsp}\(a\). If \(c=1\), there
+is no distortion and the curve becomes a circle. A Pythagoras-style
+expression that supposedly is a “length contraction” may actually be
+mathematics for encounters with circular wavefronts. Due to relative
+motion, points of encounter may form ellipses instead of
+circles.footnote:[I am careful to speak of “points of encounter”
+rather than “how the wavefront appears to an Observer.” For one thing,
+an Observer cannot see a wavefront! The Observer-Frame method never
+was realistic. It is no wonder one surmised an Observer, though merely
+a hypothetical human being, could magically “dilate time” and
+“contract space.”]
 
-*THE FOLLOWING DIAGRAM IS WRONG* It is a diagram for if there were a
- luminiferous ether.
+A closer look tells us more. _Inspection of_ \( \pm y = c \,\sqrt{
+a^2 - x^2 } \) _shows that_ \(c\) _represents a longitudinal speed in
+the_ \(y\)-_direction!_
+
+Thus we know points of encounter _will_ form ellipses! A correct
+diagram depicting an object in longitudinal motion, relative to a
+stationary antenna, therefore might look like either of the following:
 
 [.text-center]
-image:doppler-longitudinal.png[nested circles with centers offsetted and certain dimensions marked with letters r, d, p, and q]
+image:doppler-longitudinal.png[nested ellipses, with arrows showing relative motion of an object]
 
+And now we know points of encounter with wavefronts will give the same
+expressions for Doppler shift that Special Relativity
+gives.footnote:[*NEVERTHELESS I SHOULD WORK OUT AND WRITE OUT THE
+MATHEMATICS FOR MYSELF.*] Our guesses above do match the answers from
+Special Relativity, and thus are correct.
 
 Now let us criticize Special Relativity. The scaling factor guessed at
 above is \( 1/\sqrt{ 1 - (v/c)^2 } \). Special Relativity would say
@@ -179,8 +199,9 @@ realistic axioms or just a meaningless manipulation of sets, cannot
 “dilate time” or shrink a physical object. We have merely derived a
 verbal result, and now wish to know what the result means.
 
-The following diagram suggests we regard \( \sqrt{ 1 - (v/c)^2 } \) as
-a Doppler shift-free measurement scale:
+We have seen that it is an expression for a circle. The following
+diagram suggests we might also regard \( \sqrt{ 1 - (v/c)^2 } \) as a
+Doppler shift-free measurement scale:
 
 [.text-center]
 image:scale-equivalence.png[right triangle with legs v/c and sqrt(1 - (v/c)(v/c)), and hypotenuse 1.]
@@ -201,6 +222,7 @@ he would be stuck with the theory for life. And so he was.
 No one bothered looking for the actual cause of the Michelson-Morley
 effect, which now turns out to be mundane.
 
-Physicists these days have jobs to protect, however. This comes before
-interest in science. I do not expect Special Relativity to be
-abandoned just because it is wrong.
+But is it the job of a physicist to seek mundane explanations? Or is
+it the job of a physicist to manage a portfolio of citations? For if
+this mundane explanation be true then many a portfolio is rendered
+worthless.
