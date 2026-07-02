@@ -279,3 +279,13 @@ geometry because in it a sphere is a grade-4 homogeneous multivector.]
 I do not wish to prejudice myself with prior work on Special
 Relativity. Special Relativity is false. Thus I will try to proceed
 from scratch.
+
+== There is no such thing as a light ray
+
+If you study the diagram above of the transverse Doppler shift, you
+may notice something: the “bit of electromagnetism” that the moving
+object encounters is not the same “bit” it would have encountered, had
+it not been moving. It encounters a different part of the wavefront.
+
+There is no such thing as a light ray. Our new kinematics deals with
+wavefronts and never with light rays.
