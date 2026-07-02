@@ -332,4 +332,4 @@ r(\theta) = \frac {p} {1 - e \cos\theta}
 \end{equation*}
 \]
 
-where the sinusoidal function can vary.
+where the sinusoidal function can be different.
