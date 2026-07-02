@@ -1,3 +1,5 @@
 ^ATTIC$
 .*~$
-\.(log|mpx|pdf)$
+\.(log|mpx|mps)$
+^mpxerr\..*$
+

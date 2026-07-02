@@ -49,13 +49,18 @@ all:: scale-equivalence.png
 veryclean::
 	-rm -f scale-equivalence.png
 
+all:: ellipse.png
+veryclean::
+	-rm -f ellipse.png
+
 .PHONY: upload upload-html #upload-pdf
 upload: upload-html #upload-pdf
 upload-html: \
 		michelson-morley.html \
 		doppler-transverse.png \
 		doppler-longitudinal.png \
-		scale-equivalence.png
+		scale-equivalence.png \
+		ellipse.png
 	$(SCP) $(<) $(WEBSITE)/index.html
 	$(SCP) $(filter %.png,$(^)) $(WEBSITE)/
 #upload-pdf:

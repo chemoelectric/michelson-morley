@@ -289,3 +289,47 @@ it not been moving. It encounters a different part of the wavefront.
 
 There is no such thing as a light ray. Our new kinematics deals with
 wavefronts and never with light rays.
+
+== The geometry of ellipses
+
+Consider the history of a circular wavefront, so that this history
+forms a cylinder. Now let us cut a cross section that spans a time
+interval. The result is an ellipse. This is a sort of ellipse we might
+want for studying Doppler shift. This is one example of why it could
+be useful to have a reference on the geometry of ellipses.
+
+To wit:
+
+[.text-center]
+image:ellipse.png[an ellipse with many of its geometric features labeled]
+
+For any point on the ellipse, the sum of its distances to the foci
+equals \(2a\).footnote:[This fact is useful for drawing ellipses. When
+young I once used it to draw an ellipse on the ceiling of my mother’s
+bedroom because she wished to paint an oval there.]
+
+For any point on the ellipse, the ratio of its distance to a focus to
+its distance to the corresponding directrix equals the eccentricity
+\(e\).
+
+A circle has eccentricity \(e=0\) and its directrices are at infinity.
+
+Another expression for semi-latus rectum is \(p = a(1-e^2)\).
+
+A typical Cartesian equation looks like
+
+\[
+\begin{equation*}
+\frac {x^2} {a^2} + \frac {y^2} {b^2} = 1
+\end{equation*}
+\]
+
+A polar equation with one focus at the origin might look like
+
+\[
+\begin{equation*}
+r(\theta) = \frac {p} {1 - e \cos\theta}
+\end{equation*}
+\]
+
+where the sinusoidal function can vary.
