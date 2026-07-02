@@ -229,7 +229,7 @@ it the job of a physicist to manage a portfolio of citations? For if
 this mundane explanation be true then many a portfolio is rendered
 worthless.
 
-=== The general electromagnetic Doppler shift
+=== Generalized electromagnetic Doppler shift
 
 Now that we know electromagnetic Doppler shift is due to wavefronts
 moving inertially along with their sources, it would seem prudent to
@@ -253,3 +253,29 @@ t_\text{xmit}\in\{t_1,t_2,t_3,\ldots\}\), then what are the times
 \(t_e(t_\text{xmit})\) of the points of encounter of the object with
 those wavefronts, and at what points in space \(g(t_e)\) do these
 encounters occur?
+
+This approach gives only discrete answers, however, and is cumbersome.
+Really what we are interesting in is not the “points of encounter”
+question above, at all. That is just us trying to rephrase
+“Observer-Frame” so it is not “Observer-Frame”. What we want is a very
+general exploration of the geometry of electromagnetic transmissions,
+including projections between different geometric spaces.
+
+For want of a better term, let us call such geometry the study of
+electromagnetic Doppler shift.
+
+An example of such an approach is the Minkowski space of Special
+Relativity, which is a four-dimensional space-time with metric \( (
+1,1,1,-1 ) \). But we are unlikely to find this useful. If we _do_
+employ any kind of space-time, it will _at least_ have to have a
+different square magnitude than \(-1\) for the time dimension. This is
+true even if using conformal geometry along with a space-time, as I
+believe may have been done with Maxwell’s equations and Special
+Relativity.footnote:[One might wish to get very fancy. There is a
+conformal geometric algebra that has three spatial dimensions, as well
+as a point at infinity and a point at the origin. I mention this
+geometry because in it a sphere is a grade-4 homogeneous multivector.]
+
+I do not wish to prejudice myself with prior work on Special
+Relativity. Special Relativity is false. Thus I will try to proceed
+from scratch.
