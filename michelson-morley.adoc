@@ -333,6 +333,18 @@ where the sinusoidal function can be different.
 
 == Analysis of electromagnetic Doppler shift by ellipsis
 
+In the following diagram, an antenna is either stationary or moving
+leftwards with speed \(v\). The unit of speed is \(c\) and the unit of
+length is \(c\) times the time unit. The antenna is depicted at both
+the center and the left focus of the ellipse, to represent the
+stationary and moving cases, respectively.
+
 [.text-center]
 image:doppler1.png[an ellipse with geometric features labeled in terms of a speed v]
 
+A right triangle with legs \(v\), \( \sqrt{ 1 - v^2 } \) and
+hypotenuse{nbsp}\(1\) represents the tranverse Doppler shift. A
+wavefront that would have had to travel a distance \( \sqrt { 1 - v^2
+} \), were the antenna stationary, will have to travel the
+distance{nbsp}\(1\) if the antenna be moving. The wavelength thus
+experiences a Doppler shift of \( \frac {1} {\sqrt { 1 - v^2 } } \).
