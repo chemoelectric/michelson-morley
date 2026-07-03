@@ -64,8 +64,9 @@ verbatimtex
     withcolor gray;
   label.bot (btex \( 1 - v \) etex,
       0.5 (-wide, 0) + 0.5 (-v * wide, 0));
-  draw (-v * wide, (-1.35gammasq) * wide) --
-    (wide, (-1.35gammasq) * wide) withcolor gray;
+  draw ((-v * wide) - 5thin, (-1.35gammasq) * wide) --
+    (wide + 4thin, (-1.35gammasq) * wide)
+    withcolor gray;
   label.bot (btex \( 1 + v \) etex,
       0.5 (-v * wide, (-1.35gammasq) * wide) +
       0.5 (wide, (-1.35gammasq) * wide));
