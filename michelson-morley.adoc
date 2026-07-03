@@ -292,7 +292,8 @@ wavefronts and never with light rays.
 
 == The geometry of ellipses
 
-It could be useful to have a reference on the geometry of ellipses.
+Because we are likely to do much projection onto ellipses, it could be
+useful to have a reference on the geometry of ellipses.
 
 To wit:
 
@@ -329,3 +330,9 @@ r(\theta) = \frac {p} {1 - e \cos\theta}
 \]
 
 where the sinusoidal function can be different.
+
+== Analysis of electromagnetic Doppler shift by ellipsis
+
+[.text-center]
+image:doppler1.png[an ellipse with geometric features labeled in terms of a speed v]
+

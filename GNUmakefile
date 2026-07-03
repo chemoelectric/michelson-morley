@@ -53,6 +53,10 @@ all:: ellipse.png
 veryclean::
 	-rm -f ellipse.png
 
+all:: doppler1.png
+veryclean::
+	-rm -f doppler1.png
+
 .PHONY: upload upload-html #upload-pdf
 upload: upload-html #upload-pdf
 upload-html: \
@@ -60,7 +64,8 @@ upload-html: \
 		doppler-transverse.png \
 		doppler-longitudinal.png \
 		scale-equivalence.png \
-		ellipse.png
+		ellipse.png \
+		doppler1.png
 	$(SCP) $(<) $(WEBSITE)/index.html
 	$(SCP) $(filter %.png,$(^)) $(WEBSITE)/
 #upload-pdf:

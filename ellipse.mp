@@ -12,10 +12,10 @@ verbatimtex
   thin := 1pt;
   wide := 1.5in;
 
-  picture point;
-  point := image(path pointpath;
-    pointpath = (fullcircle scaled 3thin);
-    fill pointpath;);
+  picture pnt;
+  pnt := image(path pntpath;
+    pntpath = (fullcircle scaled 3thin);
+    fill pntpath;);
 
   a := 1.5;                     % semi-major axis
   b := 1;                       % semi-minor axis
@@ -32,13 +32,13 @@ verbatimtex
   currentpen := pencircle scaled thin;
   draw (fullcircle xscaled (2a * wide) yscaled (2b * wide));
 
-  draw point shifted (0,0);
+  draw pnt shifted (0,0);
   label.bot (btex \textit{center} etex, (0,0));
 
-  draw point shifted (ae * wide, 0);
+  draw pnt shifted (ae * wide, 0);
   label.bot (btex \textit{focus} etex, (ae * wide,0));
 
-  draw point shifted (-ae * wide, 0);
+  draw pnt shifted (-ae * wide, 0);
   label.bot (btex \textit{focus} etex, (-ae * wide,0));
 
   currentpen := pencircle scaled 0.5thin;
