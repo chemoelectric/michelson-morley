@@ -87,8 +87,10 @@ verbatimtex
     withcolor gray;
   draw (focus * wide) -- ((focus * wide) + (0, -gammasq * wide))
     withcolor gray;
-  label.rt (btex \( (1 - v) \, (1 + v) = 1-v^2 \) etex,
-      0.5 (focus * wide) + 0.5 ((focus * wide) + (0, -gammasq * wide)));
+  label.rt (btex \( 1-v^2 \) etex,
+      (-v * wide, -0.42 * gammasq * wide));
+  label.rt (btex \( (1 - v) \, (1 + v) \) etex,
+      (-v * wide, -0.58 * gammasq * wide));
 
   currentpicture := currentpicture scaled 1.5;
 endfig;
