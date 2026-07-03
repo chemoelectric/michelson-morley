@@ -81,9 +81,6 @@ verbatimtex
       (0, gamma * 0.42 wide));
   label.ulft (btex \( 1 \) etex, (-v * 0.5wide, gamma * 0.5wide));
 
-  draw (center * wide) -- (center * wide) + (10thin, 0)
-    withcolor gray;
-
   draw (focus * wide) -- ((focus * wide) + (-7.5thin, 0))
     withcolor gray;
   draw (focus * wide) -- ((focus * wide) + (0, -gammasq * wide))
@@ -93,7 +90,6 @@ verbatimtex
   label.rt (btex \( (1 - v) \, (1 + v) \) etex,
       (-v * wide, -0.58 * gammasq * wide));
 
-  draw (wide - 10thin, 0) -- (wide + 10thin, 0) withcolor gray;
   draw (-wide - 10thin, 0) -- (-wide, 0) withcolor gray;
   draw (0, gamma * wide) -- (0, (gamma * wide) + 10thin)
     withcolor gray;
@@ -101,6 +97,7 @@ verbatimtex
     withcolor gray;
   draw (center * wide) -- (center * wide) - (0, 10thin)
     withcolor gray;
+  draw (center * wide) -- (wide + 10thin, 0) withcolor gray;
 
   currentpicture := currentpicture scaled 1.5;
 endfig;

@@ -454,7 +454,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_there_is_no_such_thing_as_a_light_ray">There is no such thing as a light ray</a></li>
 <li><a href="#_the_geometry_of_ellipses">The geometry of ellipses</a></li>
-<li><a href="#_analysis_of_electromagnetic_doppler_shift_by_ellipsis">Analysis of electromagnetic Doppler shift by ellipsis</a></li>
+<li><a href="#AnalysisByEllipsis">Analysis of electromagnetic Doppler shift by ellipsis</a></li>
 </ul>
 </div>
 </div>
@@ -649,9 +649,10 @@ stationary antenna, therefore might look like either of the following:</p>
 </div>
 <div class="paragraph">
 <p>And now we know points of encounter with wavefronts will give the same
-expressions for Doppler shift that Special Relativity
-gives.<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup> Our guesses above do match the answers from
-Special Relativity, and thus are correct.</p>
+expressions for Doppler shift that Special Relativity gives. Our
+guesses above do match the answers from Special Relativity, and thus
+are correct. (But see <a href="#AnalysisByEllipsis">later</a> for some actual
+mathematics, based on the geometry of the ellipsis.)</p>
 </div>
 <div class="paragraph">
 <p>Now let us criticize Special Relativity. The scaling factor guessed at
@@ -749,7 +750,7 @@ employ any kind of space-time, it will <em>at least</em> have to have a
 different square magnitude than \(-1\) for the time dimension. This is
 true even if using conformal geometry along with a space-time, as I
 believe may have been done with Maxwell’s equations and Special
-Relativity.<sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup></p>
+Relativity.<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup></p>
 </div>
 <div class="paragraph">
 <p>I do not wish to prejudice myself with prior work on Special
@@ -789,7 +790,7 @@ useful to have a reference on the geometry of ellipses.</p>
 </div>
 <div class="paragraph">
 <p>For any point on the ellipse, the sum of its distances to the foci
-equals \(2a\).<sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup></p>
+equals \(2a\).<sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup></p>
 </div>
 <div class="paragraph">
 <p>For any point on the ellipse, the ratio of its distance to a focus to
@@ -828,7 +829,7 @@ r(\theta) = \frac {p} {1 - e \cos\theta}
 </div>
 </div>
 <div class="sect1">
-<h2 id="_analysis_of_electromagnetic_doppler_shift_by_ellipsis">Analysis of electromagnetic Doppler shift by ellipsis</h2>
+<h2 id="AnalysisByEllipsis">Analysis of electromagnetic Doppler shift by ellipsis</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In the following diagram, an antenna is either stationary or moving
@@ -842,11 +843,36 @@ stationary and moving cases, respectively.</p>
 </div>
 <div class="paragraph">
 <p>A right triangle with legs \(v\), \( \sqrt{ 1 - v^2 } \) and
-hypotenuse&#160;\(1\) represents the tranverse Doppler shift. A
+hypotenuse&#160;\(1\) represents the transverse Doppler shift. A
 wavefront that would have had to travel a distance \( \sqrt { 1 - v^2
 } \), were the antenna stationary, will have to travel the
 distance&#160;\(1\) if the antenna be moving. The wavelength thus
 experiences a Doppler shift of \( \frac {1} {\sqrt { 1 - v^2 } } \).</p>
+</div>
+<div class="paragraph">
+<p>The longitudinal Doppler shifts are represented by the ratio of the
+distance of the focus to a left or right extreme to the length of a
+semi-minor axis. Thus, for the moving antenna, the longitudinal
+wavelength is shifted by a ratio of of either \( \sqrt{
+\frac{1-v}{1+v} } \) or \( \sqrt{ \frac{1+v}{1-v} } \). For the
+stationary antenna, \(v=0\), the focus is at the center, and there is
+no longitudinal Doppler shift.</p>
+</div>
+<div class="paragraph">
+<p>All these cases have in common that they are the ratio between the
+distance from a point on the ellipse to the focus and the length of
+the semi-minor axis. This makes intuitive sense, because it is a
+comparison of distances traveled by the wave.</p>
+</div>
+<div class="paragraph">
+<p><em>I consider this proof beyond a reasonable doubt that Special
+Relativity is wrong.</em></p>
+</div>
+<div class="paragraph">
+<p>We might extrapolate that the intersection between the ellipse and the
+semi-latus rectum, depicted towards the lower left of the diagram,
+corresponds to a “mixed” Doppler shift of \( \frac{ 1 - v^2 }{ \sqrt{
+1 - v^2 }} = \sqrt{ 1 - v^2 } \).</p>
 </div>
 </div>
 </div>
@@ -869,18 +895,15 @@ experiences a Doppler shift of \( \frac {1} {\sqrt { 1 - v^2 } } \).</p>
 <a href="#_footnoteref_5">5</a>. I am careful to speak of “points of encounter” rather than “how the wavefront appears to an Observer.” For one thing, an Observer cannot see a wavefront! The Observer-Frame method never was realistic. It is no wonder one surmised an Observer, though merely a hypothetical human being, could magically “dilate time” and “contract space.”
 </div>
 <div class="footnote" id="_footnotedef_6">
-<a href="#_footnoteref_6">6</a>. <strong>NEVERTHELESS I SHOULD WORK OUT AND WRITE OUT THE MATHEMATICS FOR MYSELF.</strong>
+<a href="#_footnoteref_6">6</a>. One might wish to get very fancy. There is a conformal geometric algebra that has three spatial dimensions, as well as a point at infinity and a point at the origin. I mention this geometry because in it a sphere is a grade-4 homogeneous multivector.
 </div>
 <div class="footnote" id="_footnotedef_7">
-<a href="#_footnoteref_7">7</a>. One might wish to get very fancy. There is a conformal geometric algebra that has three spatial dimensions, as well as a point at infinity and a point at the origin. I mention this geometry because in it a sphere is a grade-4 homogeneous multivector.
-</div>
-<div class="footnote" id="_footnotedef_8">
-<a href="#_footnoteref_8">8</a>. This fact is useful for drawing ellipses. When young I once used it to draw an ellipse on the ceiling of my mother’s bedroom because she wished to paint an oval there.
+<a href="#_footnoteref_7">7</a>. This fact is useful for drawing ellipses. When young I once used it to draw an ellipse on the ceiling of my mother’s bedroom because she wished to paint an oval there.
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-03 11:13:09 -0500
+Last updated 2026-07-03 12:39:57 -0500
 </div>
 </div>
 <script type="text/x-mathjax-config">

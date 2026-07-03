@@ -183,10 +183,10 @@ stationary antenna, therefore might look like either of the following:
 image:doppler-longitudinal.png[nested ellipses, with arrows showing relative motion of an object]
 
 And now we know points of encounter with wavefronts will give the same
-expressions for Doppler shift that Special Relativity
-gives.footnote:[*NEVERTHELESS I SHOULD WORK OUT AND WRITE OUT THE
-MATHEMATICS FOR MYSELF.*] Our guesses above do match the answers from
-Special Relativity, and thus are correct.
+expressions for Doppler shift that Special Relativity gives. Our
+guesses above do match the answers from Special Relativity, and thus
+are correct. (But see <<AnalysisByEllipsis, later>> for some actual
+mathematics, based on the geometry of the ellipsis.)
 
 Now let us criticize Special Relativity. The scaling factor guessed at
 above is \( 1/\sqrt{ 1 - (v/c)^2 } \). Special Relativity would say
@@ -331,6 +331,7 @@ r(\theta) = \frac {p} {1 - e \cos\theta}
 
 where the sinusoidal function can be different.
 
+[[AnalysisByEllipsis]]
 == Analysis of electromagnetic Doppler shift by ellipsis
 
 In the following diagram, an antenna is either stationary or moving
@@ -343,8 +344,30 @@ stationary and moving cases, respectively.
 image:doppler1.png[an ellipse with geometric features labeled in terms of a speed v]
 
 A right triangle with legs \(v\), \( \sqrt{ 1 - v^2 } \) and
-hypotenuse{nbsp}\(1\) represents the tranverse Doppler shift. A
+hypotenuse{nbsp}\(1\) represents the transverse Doppler shift. A
 wavefront that would have had to travel a distance \( \sqrt { 1 - v^2
 } \), were the antenna stationary, will have to travel the
 distance{nbsp}\(1\) if the antenna be moving. The wavelength thus
 experiences a Doppler shift of \( \frac {1} {\sqrt { 1 - v^2 } } \).
+
+The longitudinal Doppler shifts are represented by the ratio of the
+distance of the focus to a left or right extreme to the length of a
+semi-minor axis. Thus, for the moving antenna, the longitudinal
+wavelength is shifted by a ratio of of either \( \sqrt{
+\frac{1-v}{1+v} } \) or \( \sqrt{ \frac{1+v}{1-v} } \). For the
+stationary antenna, \(v=0\), the focus is at the center, and there is
+no longitudinal Doppler shift.
+
+All these cases have in common that they are the ratio between the
+distance from a point on the ellipse to the focus and the length of
+the semi-minor axis. This makes intuitive sense, because it is a
+comparison of distances traveled by the wave.
+
+_I consider this proof beyond a reasonable doubt that Special
+Relativity is wrong._
+
+We might extrapolate that the intersection between the ellipse and the
+semi-latus rectum, depicted towards the lower left of the diagram,
+corresponds to a “mixed” Doppler shift of \( \frac{ 1 - v^2 }{ \sqrt{
+1 - v^2 }} = \sqrt{ 1 - v^2 } \).
+
