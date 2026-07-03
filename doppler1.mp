@@ -55,7 +55,7 @@ verbatimtex
   draw (-v * wide, 10thin) --
     (-v * wide, -10thin + (-1.35gammasq) * wide)
     withcolor gray;
-  draw (wide, 10thin) -- (wide, -10thin + (-1.35gammasq) * wide)
+  draw (wide, 50thin) -- (wide, -10thin + (-1.35gammasq) * wide)
     withcolor gray;
   draw (-10thin - v * wide, -gammasq * wide) --
     (10thin - v * wide, -gammasq * wide)
@@ -91,6 +91,15 @@ verbatimtex
       (-v * wide, -0.42 * gammasq * wide));
   label.rt (btex \( (1 - v) \, (1 + v) \) etex,
       (-v * wide, -0.58 * gammasq * wide));
+
+  draw (wide - 10thin, 0) -- (wide + 10thin, 0) withcolor gray;
+  draw (-wide - 10thin, 0) -- (-wide, 0) withcolor gray;
+  draw (0, gamma * wide) -- (0, (gamma * wide) + 10thin)
+    withcolor gray;
+  draw (-40thin, gamma * wide) -- (40thin, (gamma * wide))
+    withcolor gray;
+  draw (center * wide) -- (center * wide) - (0, 10thin)
+    withcolor gray;
 
   currentpicture := currentpicture scaled 1.5;
 endfig;
