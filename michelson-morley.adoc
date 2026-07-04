@@ -336,7 +336,7 @@ r(\theta) = \frac {p} {1 - e \cos\theta}
 where the sinusoidal function can be different.
 
 [[AnalysisByEllipsis]]
-== Analysis of electromagnetic Doppler shift by ellipsis
+== Analysis of electromagnetic Doppler shift by ellipse
 
 In the following diagram, an antenna is either stationary or moving
 leftwards with speed \(v\). The unit of speed is \(c\) and the unit of
@@ -344,8 +344,10 @@ length is \(c\) times the time unit. The antenna is depicted at both
 the center and the left focus of the ellipse, to represent the
 stationary and moving cases, respectively.
 
+[[DiagramE]]
 [.text-center]
 image:doppler1.png[an ellipse with geometric features labeled in terms of a speed v]
+_Diagram E. Analysis of Doppler shift by ellipse_
 
 A right triangle with legs \(v\), \( \sqrt{ 1 - v^2 } \) and
 hypotenuse{nbsp}\(1\) represents the transverse Doppler shift. A
@@ -416,3 +418,30 @@ antenna and the stationary object, or of the wavefronts and the
 stationary object. How further to describe those positions requires
 (because the antenna and its wavefronts are moving) that a method be
 specified, and so will not be explored more here.
+
+== Further analysis of electromagnetic Doppler shift
+
+I would like to explore the transformation between the stationary and
+moving antennas, but with both antennas in polar coordinates. A
+problem with doing that is the pole is not the same. One can certainly
+make the transformation with the understanding that the pole has
+moved, but would it not be better to use a format that makes it easy
+to place the poles explicitly?
+
+So let us use one of the simpler means for doing this, and resort to
+two-dimensional Euclidean geometric algebra. This representation has
+no explicit “point” object, but does have vectors and a bivector (a
+counterclockwise rotation).
+
+Let \(e_1\) represent a unit vector such that the velocity of the
+moving antenna in <<DiagramE,Diagram E>> is \(-v\mkern2mu e_1\). In other
+words, \(e_1\) points to the right. Let \(e_2\) be the orthogonal
+vector for which \(e_1\wedge e_2 = 1\) by the right hand rule. Thus
+\(e_2\) points upwards.
+
+Euclidean geometric algebra has no “natural origin,” and so we will
+instead refer all analytic-geometry locations to that of the
+stationary antenna, by using a vector. Thus the location of the moving
+antenna (the left focus of the ellipse), in <<DiagramE,Diagram E>>, is
+\(-v\mkern2mu e_1\). The location of the upper extreme of the ellipse
+is \((\sqrt{1-v^2})\,e_2\). And so on.

@@ -454,7 +454,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_there_is_no_such_thing_as_a_light_ray">There is no such thing as a light ray</a></li>
 <li><a href="#_the_geometry_of_ellipses">The geometry of ellipses</a></li>
-<li><a href="#AnalysisByEllipsis">Analysis of electromagnetic Doppler shift by ellipsis</a></li>
+<li><a href="#AnalysisByEllipsis">Analysis of electromagnetic Doppler shift by ellipse</a></li>
+<li><a href="#_further_analysis_of_electromagnetic_doppler_shift">Further analysis of electromagnetic Doppler shift</a></li>
 </ul>
 </div>
 </div>
@@ -829,7 +830,7 @@ r(\theta) = \frac {p} {1 - e \cos\theta}
 </div>
 </div>
 <div class="sect1">
-<h2 id="AnalysisByEllipsis">Analysis of electromagnetic Doppler shift by ellipsis</h2>
+<h2 id="AnalysisByEllipsis">Analysis of electromagnetic Doppler shift by ellipse</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In the following diagram, an antenna is either stationary or moving
@@ -838,8 +839,9 @@ length is \(c\) times the time unit. The antenna is depicted at both
 the center and the left focus of the ellipse, to represent the
 stationary and moving cases, respectively.</p>
 </div>
-<div class="paragraph text-center">
-<p><span class="image"><img src="doppler1.png" alt="an ellipse with geometric features labeled in terms of a speed v"></span></p>
+<div id="DiagramE" class="paragraph text-center">
+<p><span class="image"><img src="doppler1.png" alt="an ellipse with geometric features labeled in terms of a speed v"></span>
+<em>Diagram E. Analysis of Doppler shift by ellipse</em></p>
 </div>
 <div class="paragraph">
 <p>A right triangle with legs \(v\), \( \sqrt{ 1 - v^2 } \) and
@@ -926,6 +928,40 @@ specified, and so will not be explored more here.</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_further_analysis_of_electromagnetic_doppler_shift">Further analysis of electromagnetic Doppler shift</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I would like to explore the transformation between the stationary and
+moving antennas, but with both antennas in polar coordinates. A
+problem with doing that is the pole is not the same. One can certainly
+make the transformation with the understanding that the pole has
+moved, but would it not be better to use a format that makes it easy
+to place the poles explicitly?</p>
+</div>
+<div class="paragraph">
+<p>So let us use one of the simpler means for doing this, and resort to
+two-dimensional Euclidean geometric algebra. This representation has
+no explicit “point” object, but does have vectors and a bivector (a
+counterclockwise rotation).</p>
+</div>
+<div class="paragraph">
+<p>Let \(e_1\) represent a unit vector such that the velocity of the
+moving antenna in <a href="#DiagramE">Diagram E</a> is \(-v\mkern2mu e_1\). In other
+words, \(e_1\) points to the right. Let \(e_2\) be the orthogonal
+vector for which \(e_1\wedge e_2 = 1\) by the right hand rule. Thus
+\(e_2\) points upwards.</p>
+</div>
+<div class="paragraph">
+<p>Euclidean geometric algebra has no “natural origin,” and so we will
+instead refer all analytic-geometry locations to that of the
+stationary antenna, by using a vector. Thus the location of the moving
+antenna (the left focus of the ellipse), in <a href="#DiagramE">Diagram E</a>, is
+\(-v\mkern2mu e_1\). The location of the upper extreme of the ellipse
+is \((\sqrt{1-v^2})\,e_2\). And so on.</p>
+</div>
+</div>
+</div>
 </div>
 <div id="footnotes">
 <hr>
@@ -953,7 +989,7 @@ specified, and so will not be explored more here.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-04 12:07:23 -0500
+Last updated 2026-07-04 14:37:20 -0500
 </div>
 </div>
 <script type="text/x-mathjax-config">
