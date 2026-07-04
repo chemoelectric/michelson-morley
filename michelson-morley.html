@@ -455,7 +455,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_there_is_no_such_thing_as_a_light_ray">There is no such thing as a light ray</a></li>
 <li><a href="#_the_geometry_of_ellipses">The geometry of ellipses</a></li>
 <li><a href="#AnalysisByEllipsis">Analysis of electromagnetic Doppler shift by ellipse</a></li>
-<li><a href="#_further_analysis_of_electromagnetic_doppler_shift">Further analysis of electromagnetic Doppler shift</a></li>
+<li><a href="#_further_analysis_of_electromagnetic_doppler_shift_in_a_plane">Further analysis of electromagnetic Doppler shift in a plane</a></li>
 </ul>
 </div>
 </div>
@@ -929,7 +929,7 @@ specified, and so will not be explored more here.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_further_analysis_of_electromagnetic_doppler_shift">Further analysis of electromagnetic Doppler shift</h2>
+<h2 id="_further_analysis_of_electromagnetic_doppler_shift_in_a_plane">Further analysis of electromagnetic Doppler shift in a plane</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>I would like to explore the transformation between the stationary and
@@ -947,10 +947,43 @@ counterclockwise rotation).</p>
 </div>
 <div class="paragraph">
 <p>Let \(e_1\) represent a unit vector such that the velocity of the
-moving antenna in <a href="#DiagramE">Diagram E</a> is \(-v\mkern2mu e_1\). In other
-words, \(e_1\) points to the right. Let \(e_2\) be the orthogonal
-vector for which \(e_1\wedge e_2 = 1\) by the right hand rule. Thus
-\(e_2\) points upwards.</p>
+moving antenna in <a href="#DiagramE">Diagram E</a> is \(-v\mkern2mu e_1\). In
+other words, \(e_1\) points to the right. Let \(e_2\) be the
+orthogonal vector by the right hand rule. Thus \(e_2\) points upwards.
+Let the unit bivector be written \(I = e_1\wedge e_2 = e_1 e_2 =
+-e_2\wedge e_1 = -e_2 e_1\).</p>
+</div>
+<div class="paragraph">
+<p>Rotation in two-dimensional Euclidean geometric algebra can be done in
+a peculiar way.<sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup> One can premultiply by the rotor for twice the angle or
+postmultiply by that rotor’s reverse. Thus, to rotate a vector \(u\)
+by \(\varphi\):</p>
+</div>
+<div class="paragraph">
+<p>\[
+\begin{equation*}
+R_{I\varphi}u\widetilde{R}_{I\varphi}
+  = R_{I\varphi}uR_{-I\varphi}
+  = R_{I2\varphi}u
+  = uR_{-I2\varphi}
+\end{equation*}
+\]</p>
+</div>
+<div class="paragraph">
+<p>where the rotor notation is \(R_{I\alpha} = \cos\frac{\alpha}{2} -
+I\mkern2mu\sin\frac{\alpha}{2}\). The last two expressions work <em>only</em>
+in the two-dimensional algebra.</p>
+</div>
+<div class="paragraph">
+<p>For rotating \(e_1\), this all unsurprisingly works out to be</p>
+</div>
+<div class="paragraph">
+<p>\[
+\begin{equation*}
+R_{I\varphi}e_1\widetilde{R}_{I\varphi}
+  = (\cos\varphi)\,e_1+(\sin\varphi)\,e_2
+\end{equation*}
+\]</p>
 </div>
 <div class="paragraph">
 <p>Euclidean geometric algebra has no “natural origin,” and so we will
@@ -959,6 +992,33 @@ stationary antenna, by using a vector. Thus the location of the moving
 antenna (the left focus of the ellipse), in <a href="#DiagramE">Diagram E</a>, is
 \(-v\mkern2mu e_1\). The location of the upper extreme of the ellipse
 is \((\sqrt{1-v^2})\,e_2\). And so on.</p>
+</div>
+<div class="paragraph">
+<p>We can get polar coordinates by component addition thus:</p>
+</div>
+<div class="paragraph">
+<p>\[
+\begin{equation*}
+s + r\mkern2mu e_\vartheta
+  = s+
+    (r\mkern2mu\cos\vartheta)\,e_1+
+    (r\mkern2mu\sin\vartheta)\,e_2
+\end{equation*}
+\]</p>
+</div>
+<div class="paragraph">
+<p>In the above, \(s\) is a vector locating the coordinate system
+relative to the stationary antenna. Thus, in <a href="#DiagramE">Diagram E</a>,
+for the stationary antenna \(s=0\) and for the moving antenna \(s =
+-v\mkern2mu e_1\).</p>
+</div>
+<div class="paragraph">
+<p>However, that method is constraining.<sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup> An
+antenna can move in any direction, so let us write instead a vector
+\(v\mkern2mu e_v\), with \(0\le v\) and \(e_v^2 = 1\). Instead of a
+vector orthogonal to \(e_v\), let us use rotors. The orthogonal unit
+vector by the right hand rule would thus be \(R_{I\pi/2}\mkern2mu
+e_v\mkern2mu\widetilde{R}_{I\pi/2}\).</p>
 </div>
 </div>
 </div>
@@ -975,7 +1035,7 @@ is \((\sqrt{1-v^2})\,e_2\). And so on.</p>
 <a href="#_footnoteref_3">3</a>. Though this is a “speed” greater than \(c\), it is not a license for <em>Star Trek</em>. A starship would have to overtake its own electromagnetic substance, and thus would crush itself. Furthermore, \(v\lt c\) always. People who extrapolate to \(c\le v\), thus obtaining singularities, imaginary numbers, etc., are called “ding-a-lings.”
 </div>
 <div class="footnote" id="_footnotedef_4">
-<a href="#_footnoteref_4">4</a>. David H. von Seggern, <em>CRC standard curves and surfaces</em>, CRC Press, Boca Raton, FL, 1993.
+<a href="#_footnoteref_4">4</a>. David H. von Seggern, <em>CRC Standard Curves and Surfaces</em>, CRC Press, Boca Raton, FL, 1993.
 </div>
 <div class="footnote" id="_footnotedef_5">
 <a href="#_footnoteref_5">5</a>. I am careful to speak of “points of encounter” rather than “how the wavefront appears to an Observer.” For one thing, an Observer cannot see a wavefront! The Observer-Frame method never was realistic. It is no wonder one surmised an Observer, though merely a hypothetical human being, could magically “dilate time” and “contract space.” One can do almost anything, if doing it with a magic wand!
@@ -986,10 +1046,16 @@ is \((\sqrt{1-v^2})\,e_2\). And so on.</p>
 <div class="footnote" id="_footnotedef_7">
 <a href="#_footnoteref_7">7</a>. This fact is useful for drawing ellipses. When young I once used it to draw an ellipse on the ceiling of my mother’s bedroom because she wished to paint an oval there.
 </div>
+<div class="footnote" id="_footnotedef_8">
+<a href="#_footnoteref_8">8</a>. L. Dorst, D. Fontijne, and S. Mann, <em>Geometric Algebra for Computer Science: An Object-Oriented Approach to Geometry</em>, Morgan Kaufmann Publishers, San Francisco, CA, 2007, page 177.
+</div>
+<div class="footnote" id="_footnotedef_9">
+<a href="#_footnoteref_9">9</a>. Furthermore, we anticipate transitioning to three dimensions and ellipsoids.
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-04 14:37:20 -0500
+Last updated 2026-07-04 16:24:19 -0500
 </div>
 </div>
 <script type="text/x-mathjax-config">
