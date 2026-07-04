@@ -39,14 +39,13 @@ appeared to be only a different constant tensor factor, with the
 notation favoring Einstein’s version of the theory by making that
 constant an identity, and thus leading to General Relativity. However,
 I have lost those notes, and also did not put in an effort to retain
-skill in that kind of mathematics. Needless to say I would not seek a
-gravitational or unified field theory by Einstein’s methods, but
-instead would go back to doing it the way Maxwell and Heaviside did.
-However, I would favor geometric algebra over vector analysis, if I
-knew Maxwell’s theory in geometric algebra form. In Euclidean
-geometric algebra it cannot be too different, but I would especially
-like to know Maxwell’s theory in _conformal_ geometric algebra or
-something similar.]
+skill in that kind of mathematics. I would not seek a gravitational or
+unified field theory by Einstein’s methods, anyway, even via a new
+equation. Minkowski space has proven to be very error-prone in
+practice. It led to belief in the “Twin Paradox,” after all, despite
+that this requires a physical effect from inertial motion. Also I do
+not believe in “laws of relativity” as the correct form for
+kinematics, much less as a correct form for dynamics.]
 
 Below I will derive the Doppler shifts formerly known as
 “relativistic” but henceforth to be known as “electromagnetic.” The
@@ -169,7 +168,8 @@ rather than “how the wavefront appears to an Observer.” For one thing,
 an Observer cannot see a wavefront! The Observer-Frame method never
 was realistic. It is no wonder one surmised an Observer, though merely
 a hypothetical human being, could magically “dilate time” and
-“contract space.”]
+“contract space.” One can do almost anything, if doing it with a magic
+wand!]
 
 A closer look tells us more. _Inspection of_ \( \pm y = c \,\sqrt{
 a^2 - x^2 } \) _shows that_ \(c\) _represents a longitudinal speed in
@@ -274,7 +274,11 @@ believe may have been done with Maxwell’s equations and Special
 Relativity.footnote:[One might wish to get very fancy. There is a
 conformal geometric algebra that has three spatial dimensions, as well
 as a point at infinity and a point at the origin. I mention this
-geometry because in it a sphere is a grade-4 homogeneous multivector.]
+geometry because in it a sphere is a grade-4 homogeneous multivector.
+On the other hand, such fanciness may amount to nought more than an
+excuse for someone to earn the Doctor of Philosophy, in a make-believe
+reality where my intuitively obvious theory is not ignored by the very
+deeply entrenched Theory-of-Relativity industry.]
 
 I do not wish to prejudice myself with prior work on Special
 Relativity. Special Relativity is false. Thus I will try to proceed
