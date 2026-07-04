@@ -90,14 +90,27 @@ verbatimtex
   label.rt (btex \( (1 - v) \, (1 + v) \) etex,
       (-v * wide, -0.58 * gammasq * wide));
 
+%% The directrix:
+  draw  (-(1/v) * wide, -1.1gamma * wide) --
+    (-(1/v) * wide, 1.1gamma * wide) withcolor black;
+  label.rt (btex \textit{directrix} etex,
+      0.3 (-(1/v) * wide, -1.1gamma * wide) +
+      0.7 (-(1/v) * wide, 1.1gamma * wide));
+  draw (-(1/v) * wide - 5thin, gamma * wide) --
+    (40thin, (gamma * wide))
+    withcolor gray;
+  label.bot (btex \(1\,/\,v\) etex,
+      0.5 (-(1/v) * wide, gamma * wide) + 0.5 (0, (gamma * wide)));
+
   draw (-wide - 10thin, 0) -- (-wide, 0) withcolor gray;
   draw (0, gamma * wide) -- (0, (gamma * wide) + 10thin)
-    withcolor gray;
-  draw (-40thin, gamma * wide) -- (40thin, (gamma * wide))
     withcolor gray;
   draw (center * wide) -- (center * wide) - (0, 10thin)
     withcolor gray;
   draw (center * wide) -- (wide + 10thin, 0) withcolor gray;
+
+  label.rt (btex \textit{eccentricity}:\quad \( e = v \) etex,
+      (0, -0.5gamma * wide));
 
   currentpicture := currentpicture scaled 1.5;
 endfig;

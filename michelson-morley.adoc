@@ -367,7 +367,16 @@ _I consider this proof beyond a reasonable doubt that Special
 Relativity is wrong._
 
 We might extrapolate that the intersection between the ellipse and the
-semi-latus rectum, depicted towards the lower left of the diagram,
+semi-latus rectum, depicted towards the lower left of the ellipsed,
 corresponds to a “mixed” Doppler shift of \( \frac{ 1 - v^2 }{ \sqrt{
-1 - v^2 }} = \sqrt{ 1 - v^2 } \).
+1 - v^2 }} = \sqrt{ 1 - v^2 } \). *FIXME: ELABORATE ON THIS.*
 
+If the distance be denoted \(d\), going from the point on the ellipsis
+to the directrix depicted at the far left, then \(vd\) equals the
+distance from the point to the focus. Thus the ratio of \(vd\) to the
+semi-minor axis is the wavelength Doppler shift. This is \(d\) times
+the cotangent of the interior angle at the left corner of the depicted
+right triangle.
+
+_It would appear the directrix is useful for visualizing and computing
+Doppler shift._
