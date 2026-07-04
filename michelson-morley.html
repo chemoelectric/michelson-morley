@@ -869,12 +869,6 @@ comparison of distances traveled by the wave.</p>
 Relativity is wrong.</em></p>
 </div>
 <div class="paragraph">
-<p>We might extrapolate that the intersection between the ellipse and the
-semi-latus rectum, depicted towards the lower left of the ellipsed,
-corresponds to a “mixed” Doppler shift of \( \frac{ 1 - v^2 }{ \sqrt{
-1 - v^2 }} = \sqrt{ 1 - v^2 } \). <strong>FIXME: ELABORATE ON THIS.</strong></p>
-</div>
-<div class="paragraph">
 <p>If the distance be denoted \(d\), going from the point on the ellipsis
 to the directrix depicted at the far left, then \(vd\) equals the
 distance from the point to the focus. Thus the ratio of \(vd\) to the
@@ -885,6 +879,49 @@ right triangle.</p>
 <div class="paragraph">
 <p><em>It would appear the directrix is useful for visualizing and computing
 Doppler shift.</em></p>
+</div>
+<div class="paragraph">
+<p>We might extrapolate that the intersection between the ellipse and the
+semi-latus rectum, depicted towards the lower left of the ellipse,
+corresponds to a “mixed” Doppler shift of \( \frac{ 1 - v^2 }{ \sqrt{
+1 - v^2 }} = \sqrt{ 1 - v^2 } \). Let us explore this notion.</p>
+</div>
+<div class="paragraph">
+<p>Suppose we use the depicted left focus as pole for polar coordinates.
+Then the polar equation of the ellipse is</p>
+</div>
+<div class="paragraph">
+<p>\[
+\begin{equation*}
+r = \frac{1-v^2}{1-v\mkern3mu\cos\vartheta}
+  = \frac{( 1-v ) \, ( 1+v ) }{1-v\mkern3mu\cos\vartheta}
+\end{equation*}
+\]</p>
+</div>
+<div class="paragraph">
+<p>where \(r\) is the distance from the pole to the point on the ellipse,
+and \(\vartheta\) is the angle of the point, rotating counterclockwise
+from rightwards-pointing.</p>
+</div>
+<div class="paragraph">
+<p>Thus the general formula for the wavelength Doppler shift, in terms of
+\(\vartheta\), is</p>
+</div>
+<div class="paragraph">
+<p>\[
+\begin{equation*}
+\left.
+\frac{\sqrt{1-v^2}}{1-v\mkern3mu\cos\vartheta}
+  = \frac{\sqrt{ ( 1-v ) \, ( 1+v ) }}{1-v\mkern3mu\cos\vartheta}
+\mkern1em\right\}\text{wavelength Doppler shift}
+\end{equation*}
+\]</p>
+</div>
+<div class="paragraph">
+<p>where \(\vartheta\) represents the relative positions of the moving
+antenna and the stationary object. How further to describe those
+positions requires (because the antenna is moving) that a method be
+specified, and so will not be explored more here.</p>
 </div>
 </div>
 </div>
@@ -915,7 +952,7 @@ Doppler shift.</em></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-03 23:25:37 -0500
+Last updated 2026-07-04 08:32:15 -0500
 </div>
 </div>
 <script type="text/x-mathjax-config">
