@@ -455,7 +455,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_there_is_no_such_thing_as_a_light_ray">There is no such thing as a light ray</a></li>
 <li><a href="#_the_geometry_of_ellipses">The geometry of ellipses</a></li>
 <li><a href="#AnalysisByEllipsis">Analysis of electromagnetic Doppler shift by ellipse</a></li>
-<li><a href="#_further_analysis_of_electromagnetic_doppler_shift_in_a_plane">Further analysis of electromagnetic Doppler shift in a plane</a></li>
+<li><a href="#_analysis_of_electromagnetic_doppler_shift_by_geometric_algebra">Analysis of electromagnetic Doppler shift by geometric algebra</a>
+<ul class="sectlevel2">
+<li><a href="#_a_degenerate_metric_for_doppler_shifts">A degenerate metric for Doppler shifts</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -751,7 +755,7 @@ employ any kind of space-time, it will <em>at least</em> have to have a
 different square magnitude than \(-1\) for the time dimension. This is
 true even if using conformal geometry along with a space-time, as I
 believe may have been done with Maxwell’s equations and Special
-Relativity.<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup></p>
+Relativity.</p>
 </div>
 <div class="paragraph">
 <p>I do not wish to prejudice myself with prior work on Special
@@ -791,7 +795,7 @@ useful to have a reference on the geometry of ellipses.</p>
 </div>
 <div class="paragraph">
 <p>For any point on the ellipse, the sum of its distances to the foci
-equals \(2a\).<sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup></p>
+equals \(2a\).<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup></p>
 </div>
 <div class="paragraph">
 <p>For any point on the ellipse, the ratio of its distance to a focus to
@@ -929,96 +933,51 @@ specified, and so will not be explored more here.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_further_analysis_of_electromagnetic_doppler_shift_in_a_plane">Further analysis of electromagnetic Doppler shift in a plane</h2>
+<h2 id="_analysis_of_electromagnetic_doppler_shift_by_geometric_algebra">Analysis of electromagnetic Doppler shift by geometric algebra</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_a_degenerate_metric_for_doppler_shifts">A degenerate metric for Doppler shifts</h3>
 <div class="paragraph">
-<p>I would like to explore the transformation between the stationary and
-moving antennas, but with both antennas in polar coordinates. A
-problem with doing that is the pole is not the same. One can certainly
-make the transformation with the understanding that the pole has
-moved, but would it not be better to use a format that makes it easy
-to place the poles explicitly?</p>
+<p>In <a href="#DiagramE">Diagram E</a> it is natural to use a polar representation,
+but the pole moves with a change in the value of \(v\).</p>
 </div>
 <div class="paragraph">
-<p>So let us use one of the simpler means for doing this, and resort to
-two-dimensional Euclidean geometric algebra. This representation has
-no explicit “point” object, but does have vectors and a bivector (a
-counterclockwise rotation).</p>
+<p>To deal with this complication, I will use a geometric algebra that is
+the ordinary three-dimensional Euclidean geometric algebra, except it
+is augmented with a null vector \(e_p\). The new vector is orthogonal
+to the Euclidean subspace, and its dot product with all vectors is
+zero.</p>
 </div>
 <div class="paragraph">
-<p>Let \(e_1\) represent a unit vector such that the velocity of the
-moving antenna in <a href="#DiagramE">Diagram E</a> is \(-v\mkern2mu e_1\). In
-other words, \(e_1\) points to the right. Let \(e_2\) be the
-orthogonal vector by the right hand rule. Thus \(e_2\) points upwards.
-Let the unit bivector be written \(I = e_1\wedge e_2 = e_1 e_2 =
--e_2\wedge e_1 = -e_2 e_1\).</p>
+<p>Thus any <em>vector</em> can be turned into a <em>point</em> by multiplying it by
+\(e_p\), and points can be used to represent such objects as poles.</p>
 </div>
 <div class="paragraph">
-<p>Rotation in two-dimensional Euclidean geometric algebra can be done in
-a peculiar way.<sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup> One can premultiply by the rotor for twice the angle or
-postmultiply by that rotor’s reverse. Thus, to rotate a vector \(u\)
-by \(\varphi\):</p>
+<p>Points can be relocated by adding vectors to them.</p>
 </div>
 <div class="paragraph">
-<p>\[
-\begin{equation*}
-R_{I\varphi}u\widetilde{R}_{I\varphi}
-  = R_{I\varphi}uR_{-I\varphi}
-  = R_{I2\varphi}u
-  = uR_{-I2\varphi}
-\end{equation*}
-\]</p>
+<p>Two or more points can be combined by convex combination.</p>
 </div>
 <div class="paragraph">
-<p>where the rotor notation is \(R_{I\alpha} = \cos\frac{\alpha}{2} -
-I\mkern2mu\sin\frac{\alpha}{2}\). The last two expressions work <em>only</em>
-in the two-dimensional algebra.</p>
+<p>Not much else seems (at least at the moment) like a sensible thing to
+do with a point.</p>
 </div>
 <div class="paragraph">
-<p>For rotating \(e_1\), this all unsurprisingly works out to be</p>
+<p>Thus suppose the stationary antenna is located on <a href="#DiagramE">Diagram
+E</a> at point \(P_0\), and the velocity of the moving antenna is
+denoted \(v\mkern2mu e_v\). Then the moving antenna is represented by
+the point \(P_v = P_0+v\mkern2mu e_v\). If \(I_E\) represents the
+2-blade for the plane of <a href="#DiagramE">Diagram E</a>, then a rotor for the
+angle \(\vartheta\) is \(R_{I_E\vartheta} =
+\cos\frac{\vartheta}{2}-I_E\mkern2mu\sin\frac{\vartheta}{2}\). To
+rotate \(e_v\) by \(\vartheta\), do the multiplication
+\(R_{I_E\vartheta}\mkern2mu e_v\mkern2mu R_{(-I_E)\vartheta}\).</p>
 </div>
 <div class="paragraph">
-<p>\[
-\begin{equation*}
-R_{I\varphi}e_1\widetilde{R}_{I\varphi}
-  = (\cos\varphi)\,e_1+(\sin\varphi)\,e_2
-\end{equation*}
-\]</p>
+<p>We thus now have enough to locate a pole and then to locate a point on
+the ellipse relative to the pole. It also will be possible to extend
+the method to three dimensions and ellipsoids.</p>
 </div>
-<div class="paragraph">
-<p>Euclidean geometric algebra has no “natural origin,” and so we will
-instead refer all analytic-geometry locations to that of the
-stationary antenna, by using a vector. Thus the location of the moving
-antenna (the left focus of the ellipse), in <a href="#DiagramE">Diagram E</a>, is
-\(-v\mkern2mu e_1\). The location of the upper extreme of the ellipse
-is \((\sqrt{1-v^2})\,e_2\). And so on.</p>
-</div>
-<div class="paragraph">
-<p>We can get polar coordinates by component addition thus:</p>
-</div>
-<div class="paragraph">
-<p>\[
-\begin{equation*}
-s + r\mkern2mu e_\vartheta
-  = s+
-    (r\mkern2mu\cos\vartheta)\,e_1+
-    (r\mkern2mu\sin\vartheta)\,e_2
-\end{equation*}
-\]</p>
-</div>
-<div class="paragraph">
-<p>In the above, \(s\) is a vector locating the coordinate system
-relative to the stationary antenna. Thus, in <a href="#DiagramE">Diagram E</a>,
-for the stationary antenna \(s=0\) and for the moving antenna \(s =
--v\mkern2mu e_1\).</p>
-</div>
-<div class="paragraph">
-<p>However, that method is constraining.<sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup> An
-antenna can move in any direction, so let us write instead a vector
-\(v\mkern2mu e_v\), with \(0\le v\) and \(e_v^2 = 1\). Instead of a
-vector orthogonal to \(e_v\), let us use rotors. The orthogonal unit
-vector by the right hand rule would thus be \(R_{I\pi/2}\mkern2mu
-e_v\mkern2mu\widetilde{R}_{I\pi/2}\).</p>
 </div>
 </div>
 </div>
@@ -1041,21 +1000,12 @@ e_v\mkern2mu\widetilde{R}_{I\pi/2}\).</p>
 <a href="#_footnoteref_5">5</a>. I am careful to speak of “points of encounter” rather than “how the wavefront appears to an Observer.” For one thing, an Observer cannot see a wavefront! The Observer-Frame method never was realistic. It is no wonder one surmised an Observer, though merely a hypothetical human being, could magically “dilate time” and “contract space.” One can do almost anything, if doing it with a magic wand!
 </div>
 <div class="footnote" id="_footnotedef_6">
-<a href="#_footnoteref_6">6</a>. One might wish to get very fancy. There is a conformal geometric algebra that has three spatial dimensions, as well as a point at infinity and a point at the origin. I mention this geometry because in it a sphere is a grade-4 homogeneous multivector. On the other hand, such fanciness may amount to nought more than an excuse for someone to earn the Doctor of Philosophy, in a make-believe reality where my intuitively obvious theory is not ignored by the very deeply entrenched Theory-of-Relativity industry.
-</div>
-<div class="footnote" id="_footnotedef_7">
-<a href="#_footnoteref_7">7</a>. This fact is useful for drawing ellipses. When young I once used it to draw an ellipse on the ceiling of my mother’s bedroom because she wished to paint an oval there.
-</div>
-<div class="footnote" id="_footnotedef_8">
-<a href="#_footnoteref_8">8</a>. L. Dorst, D. Fontijne, and S. Mann, <em>Geometric Algebra for Computer Science: An Object-Oriented Approach to Geometry</em>, Morgan Kaufmann Publishers, San Francisco, CA, 2007, page 177.
-</div>
-<div class="footnote" id="_footnotedef_9">
-<a href="#_footnoteref_9">9</a>. Furthermore, we anticipate transitioning to three dimensions and ellipsoids.
+<a href="#_footnoteref_6">6</a>. This fact is useful for drawing ellipses. When young I once used it to draw an ellipse on the ceiling of my mother’s bedroom because she wished to paint an oval there.
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-04 16:24:19 -0500
+Last updated 2026-07-04 21:16:52 -0500
 </div>
 </div>
 <script type="text/x-mathjax-config">

@@ -271,14 +271,7 @@ employ any kind of space-time, it will _at least_ have to have a
 different square magnitude than \(-1\) for the time dimension. This is
 true even if using conformal geometry along with a space-time, as I
 believe may have been done with Maxwell’s equations and Special
-Relativity.footnote:[One might wish to get very fancy. There is a
-conformal geometric algebra that has three spatial dimensions, as well
-as a point at infinity and a point at the origin. I mention this
-geometry because in it a sphere is a grade-4 homogeneous multivector.
-On the other hand, such fanciness may amount to nought more than an
-excuse for someone to earn the Doctor of Philosophy, in a make-believe
-reality where my intuitively obvious theory is not ignored by the very
-deeply entrenched Theory-of-Relativity industry.]
+Relativity.
 
 I do not wish to prejudice myself with prior work on Special
 Relativity. Special Relativity is false. Thus I will try to proceed
@@ -419,84 +412,120 @@ stationary object. How further to describe those positions requires
 (because the antenna and its wavefronts are moving) that a method be
 specified, and so will not be explored more here.
 
-== Further analysis of electromagnetic Doppler shift in a plane
+== Analysis of electromagnetic Doppler shift by geometric algebra
 
-I would like to explore the transformation between the stationary and
-moving antennas, but with both antennas in polar coordinates. A
-problem with doing that is the pole is not the same. One can certainly
-make the transformation with the understanding that the pole has
-moved, but would it not be better to use a format that makes it easy
-to place the poles explicitly?
+=== A degenerate metric for Doppler shifts
 
-So let us use one of the simpler means for doing this, and resort to
-two-dimensional Euclidean geometric algebra. This representation has
-no explicit “point” object, but does have vectors and a bivector (a
-counterclockwise rotation).
+In <<DiagramE,Diagram E>> it is natural to use a polar representation,
+but the pole moves with a change in the value of \(v\).
 
-Let \(e_1\) represent a unit vector such that the velocity of the
-moving antenna in <<DiagramE,Diagram E>> is \(-v\mkern2mu e_1\). In
-other words, \(e_1\) points to the right. Let \(e_2\) be the
-orthogonal vector by the right hand rule. Thus \(e_2\) points upwards.
-Let the unit bivector be written \(I = e_1\wedge e_2 = e_1 e_2 =
--e_2\wedge e_1 = -e_2 e_1\).
+To deal with this complication, I will use a geometric algebra that is
+the ordinary three-dimensional Euclidean geometric algebra, except it
+is augmented with a null vector \(e_p\). The new vector is orthogonal
+to the Euclidean subspace, and its dot product with all vectors is
+zero.
 
-Rotation in two-dimensional Euclidean geometric algebra can be done in
-a peculiar way.footnote:[L. Dorst, D. Fontijne, and S. Mann,
-_Geometric Algebra for Computer Science: An Object-Oriented Approach
-to Geometry_, Morgan Kaufmann Publishers, San Francisco, CA, 2007,
-page 177.] One can premultiply by the rotor for twice the angle or
-postmultiply by that rotor’s reverse. Thus, to rotate a vector \(u\)
-by \(\varphi\):
+Thus any _vector_ can be turned into a _point_ by multiplying it by
+\(e_p\), and points can be used to represent such objects as poles.
 
-\[
-\begin{equation*}
-R_{I\varphi}u\widetilde{R}_{I\varphi}
-  = R_{I\varphi}uR_{-I\varphi}
-  = R_{I2\varphi}u
-  = uR_{-I2\varphi}
-\end{equation*}
-\]
+Points can be relocated by adding vectors to them.
 
-where the rotor notation is \(R_{I\alpha} = \cos\frac{\alpha}{2} -
-I\mkern2mu\sin\frac{\alpha}{2}\). The last two expressions work _only_
-in the two-dimensional algebra.
+Two or more points can be combined by convex combination.
 
-For rotating \(e_1\), this all unsurprisingly works out to be
+Not much else seems (at least at the moment) like a sensible thing to
+do with a point.
 
-\[
-\begin{equation*}
-R_{I\varphi}e_1\widetilde{R}_{I\varphi}
-  = (\cos\varphi)\,e_1+(\sin\varphi)\,e_2
-\end{equation*}
-\]
+Thus suppose the stationary antenna is located on <<DiagramE,Diagram
+E>> at point \(P_0\), and the velocity of the moving antenna is
+denoted \(v\mkern2mu e_v\). Then the moving antenna is represented by
+the point \(P_v = P_0+v\mkern2mu e_v\). If \(I_E\) represents the
+2-blade for the plane of <<DiagramE,Diagram E>>, then a rotor for the
+angle \(\vartheta\) is \(R_{I_E\vartheta} =
+\cos\frac{\vartheta}{2}-I_E\mkern2mu\sin\frac{\vartheta}{2}\). To
+rotate \(e_v\) by \(\vartheta\), do the multiplication
+\(R_{I_E\vartheta}\mkern2mu e_v\mkern2mu R_{(-I_E)\vartheta}\).
 
-Euclidean geometric algebra has no “natural origin,” and so we will
-instead refer all analytic-geometry locations to that of the
-stationary antenna, by using a vector. Thus the location of the moving
-antenna (the left focus of the ellipse), in <<DiagramE,Diagram E>>, is
-\(-v\mkern2mu e_1\). The location of the upper extreme of the ellipse
-is \((\sqrt{1-v^2})\,e_2\). And so on.
+We thus now have enough to locate a pole and then to locate a point on
+the ellipse relative to the pole. It also will be possible to extend
+the method to three dimensions and ellipsoids.
 
-We can get polar coordinates by component addition thus:
 
-\[
-\begin{equation*}
-s + r\mkern2mu e_\vartheta
-  = s+
-    (r\mkern2mu\cos\vartheta)\,e_1+
-    (r\mkern2mu\sin\vartheta)\,e_2
-\end{equation*}
-\]
-
-In the above, \(s\) is a vector locating the coordinate system
-relative to the stationary antenna. Thus, in <<DiagramE,Diagram E>>,
-for the stationary antenna \(s=0\) and for the moving antenna \(s =
--v\mkern2mu e_1\).
-
-However, that method is constraining.footnote:[Furthermore, we
-anticipate transitioning to three dimensions and ellipsoids.] An
-antenna can move in any direction, so let us write instead a vector
-\(v\mkern2mu e_v\), with \(0\le v\) and \(e_v^2 = 1\). Instead of a
-vector orthogonal to \(e_v\), let us use rotors. The orthogonal unit
-vector by the right hand rule would thus be \(R_{I\pi/2}\mkern2mu
-e_v\mkern2mu\widetilde{R}_{I\pi/2}\).
+// I would like to explore the transformation between the stationary and
+// moving antennas, but with both antennas in polar coordinates. A
+// problem with doing that is the pole is not the same. One can certainly
+// make the transformation with the understanding that the pole has
+// moved, but would it not be better to use a format that makes it easy
+// to place the poles explicitly?
+// 
+// So let us use one of the simpler means for doing this, and resort to
+// two-dimensional Euclidean geometric algebra. This representation has
+// no explicit “point” object, but does have vectors and a bivector (a
+// counterclockwise rotation).
+// 
+// Let \(e_1\) represent a unit vector such that the velocity of the
+// moving antenna in <<DiagramE,Diagram E>> is \(-v\mkern2mu e_1\). In
+// other words, \(e_1\) points to the right. Let \(e_2\) be the
+// orthogonal vector by the right hand rule. Thus \(e_2\) points upwards.
+// Let the unit bivector be written \(I = e_1\wedge e_2 = e_1 e_2 =
+// -e_2\wedge e_1 = -e_2 e_1\).
+// 
+// Rotation in two-dimensional Euclidean geometric algebra can be done in
+// a peculiar way.footnote:[L. Dorst, D. Fontijne, and S. Mann,
+// _Geometric Algebra for Computer Science: An Object-Oriented Approach
+// to Geometry_, Morgan Kaufmann Publishers, San Francisco, CA, 2007,
+// page 177.] One can premultiply by the rotor for twice the angle or
+// postmultiply by that rotor’s reverse. Thus, to rotate a vector \(u\)
+// by \(\varphi\):
+// 
+// \[
+// \begin{equation*}
+// R_{I\varphi}u\widetilde{R}_{I\varphi}
+//   = R_{I\varphi}uR_{-I\varphi}
+//   = R_{I2\varphi}u
+//   = uR_{-I2\varphi}
+// \end{equation*}
+// \]
+// 
+// where the rotor notation is \(R_{I\alpha} = \cos\frac{\alpha}{2} -
+// I\mkern2mu\sin\frac{\alpha}{2}\). The last two expressions work _only_
+// in the two-dimensional algebra.
+// 
+// For rotating \(e_1\), this all unsurprisingly works out to be
+// 
+// \[
+// \begin{equation*}
+// R_{I\varphi}e_1\widetilde{R}_{I\varphi}
+//   = (\cos\varphi)\,e_1+(\sin\varphi)\,e_2
+// \end{equation*}
+// \]
+// 
+// Euclidean geometric algebra has no “natural origin,” and so we will
+// instead refer all analytic-geometry locations to that of the
+// stationary antenna, by using a vector. Thus the location of the moving
+// antenna (the left focus of the ellipse), in <<DiagramE,Diagram E>>, is
+// \(-v\mkern2mu e_1\). The location of the upper extreme of the ellipse
+// is \((\sqrt{1-v^2})\,e_2\). And so on.
+// 
+// We can get polar coordinates by component addition thus:
+// 
+// \[
+// \begin{equation*}
+// s + r\mkern2mu e_\vartheta
+//   = s+
+//     (r\mkern2mu\cos\vartheta)\,e_1+
+//     (r\mkern2mu\sin\vartheta)\,e_2
+// \end{equation*}
+// \]
+// 
+// In the above, \(s\) is a vector locating the coordinate system
+// relative to the stationary antenna. Thus, in <<DiagramE,Diagram E>>,
+// for the stationary antenna \(s=0\) and for the moving antenna \(s =
+// -v\mkern2mu e_1\).
+// 
+// However, that method is constraining.footnote:[Furthermore, we
+// anticipate transitioning to three dimensions and ellipsoids.] An
+// antenna can move in any direction, so let us write instead a vector
+// \(v\mkern2mu e_v\), with \(0\le v\) and \(e_v^2 = 1\). Instead of a
+// vector orthogonal to \(e_v\), let us use rotors. The orthogonal unit
+// vector by the right hand rule would thus be \(R_{I\pi/2}\mkern2mu
+// e_v\mkern2mu\widetilde{R}_{I\pi/2}\).
