@@ -449,83 +449,71 @@ We thus now have enough to locate a pole and then to locate a point on
 the ellipse relative to the pole. It also will be possible to extend
 the method to three dimensions and ellipsoids.
 
+*FIXME: CONTINUE WITH THIS.*
 
-// I would like to explore the transformation between the stationary and
-// moving antennas, but with both antennas in polar coordinates. A
-// problem with doing that is the pole is not the same. One can certainly
-// make the transformation with the understanding that the pole has
-// moved, but would it not be better to use a format that makes it easy
-// to place the poles explicitly?
+== The mass density of electromagnetic fields
+
+The opinion of this author is that the moment someone proposes the
+existence of a “particle with zero mass” then there must actually be
+no such thing. Instead there is something else that is, at least for
+mathematical purposes, _continuous_, and which has a _mass density_.
+Others may be reluctant to imagine electromagnetism having a rather
+ordinary mass density, but look at the mess we are in! Fundamental
+physics has not really changed in a century. We have gotten nowhere
+since 1927,footnote:[The Solvay conference of that year having
+resolved, by a harebrained consensus over the sensible objections of
+Albert Einstein, that a creed and catechism be adopted. Einstein never
+pledged the creed, and correctly did not believe there was a separate
+type of physics called “quantum.” But I am a child of the Space Age,
+born a fews days before the flight of
+https://en.wikipedia.org/w/index.php?title=Mercury-Redstone_4&oldid=1356745594[_Liberty
+Bell{nbsp}7_]. In the Space Age and now we _easily_ imagine a body in
+free fall. There is no novelty in it. We can say of free fall “So
+what?” and then contemplate further. A body in free fall _in a force
+field_ experiences _distortional forces_. Thus _this_ free fall _is
+not_ like inertial motion, wherein one experiences _no forces_. The
+difference is unnoticeable only at small scale, and an assertion there
+is no “actual” difference would be directly contrary to empirical
+facts. Thus a “theory of relativity” _is not_ appropriate for
+dynamics:
+https://en.wikipedia.org/w/index.php?title=Scotty_(Star_Trek)&oldid=1361648035[Scotty],
+an engineer, would not choose that format. Also, unlike Einstein, I
+studied electrical engineering in the 1980s, and so imagine _a
+broadcast antenna_ rather than light when contemplating
+Michelson-Morley. When Einstein formulated Special Relativity, there
+would be no commercial radio stations yet for many years! This was a
+_tremendous_ disadvantage for physicists—and continues to be, because
+they keep depicting “light” and a hypothetical “Observer” instead of
+an antenna transmitting at 830{nbsp}KHz. Commercial radio stations
+came to be in 1920, and thanks to _them_ Michelson-Morley can be
+understood.] and astronomy has returned to inventing epicycles—except
+now they are epicycles invisible to telescopes!
+
+Thus I will try to derive a mass density for electromagnetism. Whether
+I succeed or not we shall see.
+
+We can agree, of course, that an electromagnetic field has an energy
+density. Imagine a fixed-frequency sinusoidal transmission radiating
+spherically. If some object gets in the way of the transmission, the
+waves will exert radiation pressure upon the object. Physicists
+typically attribute this pressure to “photons,” but we will do no such
+thing. What we should actually do is obvious if one understands
+calculus qualitatively and not merely quantitatively. The motion of a
+wave should be treated as direct contact action within a continuous
+fluid. Radiation pressure will be due to the fluid pressing upon the
+object.
+
+
+
+
+// An antenna transmitting spherical waves at a power \(W_L\), acting
+// upon a reflective surface of area \(A_S\) at a distance \(r\), exerts
+// a force \(F = \frac{A_S}{2\pi r^2 c}W_L\) on the surface. If the
+// surface have mass \(m_S\) and be in free space, it will accelerate at
+// rate \(\frac{dv_S}{dt} = \frac{F}{m_S}\).
 // 
-// So let us use one of the simpler means for doing this, and resort to
-// two-dimensional Euclidean geometric algebra. This representation has
-// no explicit “point” object, but does have vectors and a bivector (a
-// counterclockwise rotation).
-// 
-// Let \(e_1\) represent a unit vector such that the velocity of the
-// moving antenna in <<DiagramE,Diagram E>> is \(-v\mkern2mu e_1\). In
-// other words, \(e_1\) points to the right. Let \(e_2\) be the
-// orthogonal vector by the right hand rule. Thus \(e_2\) points upwards.
-// Let the unit bivector be written \(I = e_1\wedge e_2 = e_1 e_2 =
-// -e_2\wedge e_1 = -e_2 e_1\).
-// 
-// Rotation in two-dimensional Euclidean geometric algebra can be done in
-// a peculiar way.footnote:[L. Dorst, D. Fontijne, and S. Mann,
-// _Geometric Algebra for Computer Science: An Object-Oriented Approach
-// to Geometry_, Morgan Kaufmann Publishers, San Francisco, CA, 2007,
-// page 177.] One can premultiply by the rotor for twice the angle or
-// postmultiply by that rotor’s reverse. Thus, to rotate a vector \(u\)
-// by \(\varphi\):
-// 
-// \[
-// \begin{equation*}
-// R_{I\varphi}u\widetilde{R}_{I\varphi}
-//   = R_{I\varphi}uR_{-I\varphi}
-//   = R_{I2\varphi}u
-//   = uR_{-I2\varphi}
-// \end{equation*}
-// \]
-// 
-// where the rotor notation is \(R_{I\alpha} = \cos\frac{\alpha}{2} -
-// I\mkern2mu\sin\frac{\alpha}{2}\). The last two expressions work _only_
-// in the two-dimensional algebra.
-// 
-// For rotating \(e_1\), this all unsurprisingly works out to be
-// 
-// \[
-// \begin{equation*}
-// R_{I\varphi}e_1\widetilde{R}_{I\varphi}
-//   = (\cos\varphi)\,e_1+(\sin\varphi)\,e_2
-// \end{equation*}
-// \]
-// 
-// Euclidean geometric algebra has no “natural origin,” and so we will
-// instead refer all analytic-geometry locations to that of the
-// stationary antenna, by using a vector. Thus the location of the moving
-// antenna (the left focus of the ellipse), in <<DiagramE,Diagram E>>, is
-// \(-v\mkern2mu e_1\). The location of the upper extreme of the ellipse
-// is \((\sqrt{1-v^2})\,e_2\). And so on.
-// 
-// We can get polar coordinates by component addition thus:
-// 
-// \[
-// \begin{equation*}
-// s + r\mkern2mu e_\vartheta
-//   = s+
-//     (r\mkern2mu\cos\vartheta)\,e_1+
-//     (r\mkern2mu\sin\vartheta)\,e_2
-// \end{equation*}
-// \]
-// 
-// In the above, \(s\) is a vector locating the coordinate system
-// relative to the stationary antenna. Thus, in <<DiagramE,Diagram E>>,
-// for the stationary antenna \(s=0\) and for the moving antenna \(s =
-// -v\mkern2mu e_1\).
-// 
-// However, that method is constraining.footnote:[Furthermore, we
-// anticipate transitioning to three dimensions and ellipsoids.] An
-// antenna can move in any direction, so let us write instead a vector
-// \(v\mkern2mu e_v\), with \(0\le v\) and \(e_v^2 = 1\). Instead of a
-// vector orthogonal to \(e_v\), let us use rotors. The orthogonal unit
-// vector by the right hand rule would thus be \(R_{I\pi/2}\mkern2mu
-// e_v\mkern2mu\widetilde{R}_{I\pi/2}\).
+// Regard this interaction as an elastic collision, transferring a
+// differential of momentum. The differential of momentum of the surface
+// is \(m_S\,dv_S\). For the waves, on the other hand, the differential
+// of momentum is \(c\,dm_L\), where \(dm_L\) is a hypothetical
+// differential of mass.
