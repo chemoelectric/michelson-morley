@@ -412,6 +412,18 @@ stationary object. How further to describe those positions requires
 (because the antenna and its wavefronts are moving) that a method be
 specified, and so will not be explored more here.
 
+== There is no such thing as a photon
+
+Electromagnetic Doppler shift, we have learnt, is due to the arrival
+of wavefronts being at speeds within the range \( \left[c-v,c+v\right]
+\). Thus Doppler shift is inconsistent with their being a particle
+that somehow has a frequency. Frequency must be due entirely to times
+of arrival.
+
+We can conclude there is no such thing as a photon. The theory must be
+abandoned. Any theory that attributes frequency to a component of
+electromagnetism, rather than to times of encounters, must be wrong.
+
 == Analysis of electromagnetic Doppler shift by geometric algebra
 
 === A degenerate metric for Doppler shifts
