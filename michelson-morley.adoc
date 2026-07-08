@@ -563,18 +563,12 @@ mass-energy equivalence, on the other hand, it requires work to create
 the interference. The amount of work put in will equal the amount of
 mass lost.
 
+The disappearing mass is no longer “destroyed.” We merely have a
+balancing of the books. Conservation laws are about balancing the
+books. They are equivalent to Newton’s laws of motion, but sometimes
+more convenient.
 
-
-
-
-// An antenna transmitting spherical waves at a power \(W_L\), acting
-// upon a reflective surface of area \(A_S\) at a distance \(r\), exerts
-// a force \(F = \frac{A_S}{2\pi r^2 c}W_L\) on the surface. If the
-// surface have mass \(m_S\) and be in free space, it will accelerate at
-// rate \(\frac{dv_S}{dt} = \frac{F}{m_S}\).
-// 
-// Regard this interaction as an elastic collision, transferring a
-// differential of momentum. The differential of momentum of the surface
-// is \(m_S\,dv_S\). For the waves, on the other hand, the differential
-// of momentum is \(c\,dm_L\), where \(dm_L\) is a hypothetical
-// differential of mass.
+We should expect, however, that in a unified field theory the mass,
+now having “disappeared,” will no longer figure in gravitational
+attraction (or gravitational repulsion, if it should turn out there is
+such a thing).
