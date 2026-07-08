@@ -515,6 +515,46 @@ wave should be treated as direct contact action within a continuous
 fluid. Radiation pressure will be due to the fluid pressing upon the
 object.
 
+=== What might result from all this
+
+It seems likely the mass density of electromagnetic fields will be
+equivalent to the energy density of the fields.
+
+Some would say, “Why, then, call it ‘mass’? Why not, as physics
+professors do, speak only of the _momentum_ of electromagnetic waves?”
+And, indeed, the conservation of momentum does not require a
+definition of mass.
+
+The conservation of _energy_, however, is incomplete unless it is the
+conservation of _mass_ as well. And thus the equivalence is better
+made _explicit_ than letting mere definitions lead people to believe
+an _energy_ cannot also be a _mass_.
+
+Furthermore, suppose we want to unify electromagnetic theory with
+gravitational theory. By Einstein’s methods, a gravitational wave may
+be bent in a gravitational field because it follows the course of a
+geodetic. But the geodetic is merely part of a coordinate system. It
+is a mathematical entity, not a physical one. And we would not do our
+gravitational theory that way, because we do not believe “relativity”
+is an appropriate format for dynamics (nor even for kinematics). We
+would instead revise Maxwell’s equations as they are normally written.
+And we would want “mass” to appear in the equations somehow.
+
+We might, say, rewrite the equations in a geometric algebra instead of
+the old vector notation I used in engineering school. But we would
+keep Maxwell’s equations as radio engineers would like them to be,
+rather than cater to the fantasies of people who do not have to supply
+a reliable signal to thousands of homes.
+
+I have good reason to expect mass-energy equivalence will be
+necessary. This is the superposition of electromagnetic fields. If it
+were not for mass-energy equivalence, the nullification of one field
+by its additive opposite would represent a destruction of mass. With
+mass-energy equivalence, on the other hand, it requires work to create
+the interference. The amount of work put in will equal the amount of
+mass lost.
+
+
 
 
 
