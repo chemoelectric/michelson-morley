@@ -424,6 +424,15 @@ We can conclude there is no such thing as a photon. The theory must be
 abandoned. Any theory that attributes frequency to a component of
 electromagnetism, rather than to times of encounters, must be wrong.
 
+Incidentally, this means the two-slit experiment with light must be
+reëvaluated using only electromagnetic waves. There should be no
+difficulty explaining the experiment, if the light were assumed to
+come in small bursts and random process analysis were used
+_correctly_. As for the two-slit experiment with, say, electrons, it
+may be necessary finally to treat electrons as what they must be, at
+least in part: electromagnetic fields.footnote:[I could here put a
+reference to W.{nbsp}A. Hofer’s model of the electron.]
+
 == Analysis of electromagnetic Doppler shift by geometric algebra
 
 === A degenerate metric for Doppler shifts
