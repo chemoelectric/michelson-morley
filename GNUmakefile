@@ -65,8 +65,9 @@ upload-html: \
 		doppler-longitudinal.png \
 		scale-equivalence.png \
 		ellipse.png \
-		doppler1.png
+		doppler1.png \
+		fieldtheory-20260710.151100.pdf
 	$(SCP) $(<) $(WEBSITE)/index.html
-	$(SCP) $(filter %.png,$(^)) $(WEBSITE)/
+	$(SCP) $(filter %.png %.pdf,$(^)) $(WEBSITE)/
 #upload-pdf:
 #	$(SCP) $(^) $(WEBSITE)

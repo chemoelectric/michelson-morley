@@ -466,9 +466,36 @@ angle \(\vartheta\) is \(R_{I_E\vartheta} =
 rotate \(e_v\) by \(\vartheta\), do the multiplication
 \(R_{I_E\vartheta}\mkern2mu e_v\mkern2mu R_{(-I_E)\vartheta}\).
 
-We thus now have enough to locate a pole and then to locate a point on
-the ellipse relative to the pole. It also will be possible to extend
-the method to three dimensions and ellipsoids.
+As a shorthand for rotation in a plane, we will write
+
+\[
+\begin{equation*}
+\underset{I\varphi}{\circlearrowleft} v
+  = R_{I\varphi}\mkern2mu v\mkern2mu R_{(-I)\varphi}
+  = \left(\cos\frac{\varphi}{2}
+    - I\mkern1mu\sin\frac{\varphi}{2}\right)
+      v
+      \left(\cos\frac{\varphi}{2}
+      + I\mkern1mu\sin\frac{\varphi}{2}\right)
+\end{equation*}
+\]
+
+where \(I\) is the unit bivector for the plane of rotation,
+\(\varphi\) is the angle by which to rotate, and \(v\) is the vector
+to rotate.footnote:[I do not believe I have ever seen this notation
+elsewhere, but it is fun to take advantage of Unicode. Also, the
+notation is easy to write by hand.] The vector need not lie in the
+plane of rotation. If it does lie in the plane, however, you can just
+do the usual vector component operations, even if only because all
+mathematical methods must reach the same result.
+
+We now have enough to locate a pole and then to locate a point on the
+ellipse relative to the pole. It also will be possible to extend the
+method to three dimensions and ellipsoids. The metric for our space
+cannot be inverted, but I do not know if this will be an impediment.
+The metric for the three-dimensional Euclidean subspace is the usual
+\( \begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix} \), although I have
+not specified any basis vectors and do not plan to.
 
 *FIXME: CONTINUE WITH THIS.*
 
@@ -572,3 +599,33 @@ We should expect, however, that in a unified field theory the mass,
 now having “disappeared,” will no longer figure in gravitational
 attraction (or gravitational repulsion, if it should turn out there is
 such a thing).
+
+=== What _has_ resulted from all this
+
+I have spent time now using Google’s search
+functions{empty}footnote:[Misleadingly called “artificial
+intelligence,” though they obviously bear no resemblance to human
+intelligence. Human intelligence evolved from animal intelligence,
+_and therefore cannot be modeled by language_. Also, it is a category
+error to assume a model of neurons will produce the behavior of a
+brain.] to do a guided mathematical exploration of the physics.
+
+I have now in just one day seemingly come up with a unified field
+theory, modeled the electron, the proton, the neutron, and the
+hydrogen atom, explained the two-slit experiment, explained
+Stern-Gerlach magnet behavior, and explained the behavior of galaxies
+without either “dark matter” or “dark energy.” Among other things.
+
+But I have not checked everything yet. I am very rusty in these
+matters. I did catch some errors and corrected them, early on.
+
+I try to give the search algorithm a lot of information, to help it
+find any material that might be even slightly relevant. It is a search
+and syntactic arrangement algorithm, not an “intelligence.”
+
+Here are links to the search dialog and a PDF of the dialog:
+
+https://www.google.com/search?client=firefox-b-1-d&channel=entpr&q=newtons+laws+of+motion+in+4D+euclidean+geometric+algebra&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832a9BVCEiB2iPJNekNderQwLP8msUKsz-6AMxGyueJZ9cK2mNBy2II_6WvkKSZWdeggc7a5-PkN1W4krCU8bvvb222ld7DslYVIxVGS6hS5ngUrVOs5a9c652d2gi9qX87nTl4scoXT_hidx4oPA6XMgdJfhqS_GginZfx551wGsGgUQlfw&aep=10&ntc=1&mstk=AUtExfCw8eSiOaDfuqtMNI3ZOg5s2NLxXQwF3SWcvahUkMVPuJ2NiRIoIpp9QDhyUApvJgFJjGlYvaCGcaxvk-a-y8zFzqe13vjMi98PWs1ocNGfMQyLEDnYaI_gmG0urabvP96oERLNSBiCjzJsGqf9wubzQvWdxDLfZ9kTuX8ptn_JkWcurD91bLwllFItYsJwwbMYHyduDeKohmaBYoVB9IVXxIKpXuOnn6xJCFnbH080nFXbjq8BFsSHxTCtOqTGYXYBWNDg6FA2g3vqnK71QTd_lRxGiYOGERc3ME5qlXCk5cTr7S2vTB4s382H2_WZsObJPC2I-in59AdsIP9ymW1gm3q0Cgu1SrVktaCiL8iismYoEtGNRBT9m_d-vHbsHtj9mHqcFE2Z1_IPxqT_0gtD286P6wYz-acNq6CYpZ5v6am9kglFmyg1AkX5_CknLnpla0kIuWZ0klqPP1LRPZrsDgeVkmMHyckizn5MMugklXq9AptevD6oFI-dlGJBTpQkznjaeDGAwIT-gvYsuiatkzcSzUc&aioh=3&csuir=1&mtid=d89PavvqOLuDmLQPncPi6Qs&atvm=2&lns_mode=cvst&udm=50
+
+https://michelson-morley.crudfactory.com/fieldtheory-20260710.151100.pdf
+
