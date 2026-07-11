@@ -68,10 +68,18 @@ upload-html: \
 		doppler1.png \
 		fieldtheory-20260710.151100.pdf \
 		elliptic-model-of-doppler-shift.pdf \
+		einstein-field-theory.pdf \
 		fields1.pdf fields2.pdf \
 		fields3.pdf fields4.pdf \
+		bell-and-clauser-errors.pdf \
+		stern-gerlach-eprb.pdf \
+		two-channel-bell-1.pdf \
+		two-channel-bell-2.pdf \
+		two-channel-bell-3.pdf \
 		led-model.pdf tunnel-diode-model.pdf \
-		cmos-inverter-model.pdf
+		cmos-inverter-model.pdf \
+		foxhole-detector-model.pdf \
+		two-qubit-register-model.pdf
 	$(SCP) $(<) $(WEBSITE)/index.html
 	$(SCP) $(filter %.png %.pdf,$(^)) $(WEBSITE)/
 #upload-pdf:

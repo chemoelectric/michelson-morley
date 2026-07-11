@@ -639,27 +639,37 @@ Here is a link to a PDF of the original dialog:
 * https://michelson-morley.crudfactory.com/fieldtheory-20260710.151100.pdf
 
 But below are PDFs to more organized and updated sessions with a more
-powerful inference engine and a better geometric algebra. Because I do
-not expect physicists to give me so much as the time of day, I may
-seek many models of electronics, radio, and other engineering systems.
-I come from an engineering background and it seems to me that I am
-more likely to be taken seriously by engineers—although these days I
-have become rather hopeless. I do not join any IEEE societies, because
-their newsletters are full of nonsense about “quantum” this and
-“quantum” that, and I know with logical certainty there is no such
-thing as “quantum physics.” (Even Albert Einstein did not know this
-_with logical certainty_.footnote:[At the 1927 Solvay conference,
-Einstein showed he knew Bohr and crew were not doing science but
-playing God: “God does not play dice with the universe!” Which led to
-Bohr’s infamous retort, “I’m rubber, you’re glue!”] But I do.)
+powerful inference engine and a better geometric algebra. I have also
+included some of my work debunking “quantum physics,” because Albert
+Einstein would have wanted me to. Because I do not expect physicists
+to give me so much as the time of day, I may seek many models of
+electronics, radio, and other engineering systems. I come from an
+engineering background and it seems to me that I am more likely to be
+taken seriously by engineers—although these days I have become rather
+hopeless. I do not join any IEEE societies, because their newsletters
+are full of nonsense about “quantum” this and “quantum” that, and I
+know with logical certainty there is no such thing as “quantum
+physics.” (Even Albert Einstein did not know this _with logical
+certainty_.footnote:[At the 1927 Solvay conference, Einstein showed he
+knew Bohr and crew were not doing science but playing God: “God does
+not play dice with the universe!” Which led to Bohr’s infamous retort,
+“I’m rubber, you’re glue!”] But I do.)
 
+* https://michelson-morley.crudfactory.com/einstein-field-theory.pdf
 * https://michelson-morley.crudfactory.com/fields1.pdf
 * https://michelson-morley.crudfactory.com/fields2.pdf
 * https://michelson-morley.crudfactory.com/fields3.pdf
 * https://michelson-morley.crudfactory.com/fields4.pdf
+* https://michelson-morley.crudfactory.com/bell-and-clauser-errors.pdf
+* https://michelson-morley.crudfactory.com/stern-gerlach-eprb.pdf
+* https://michelson-morley.crudfactory.com/two-channel-bell-1.pdf
+* https://michelson-morley.crudfactory.com/two-channel-bell-2.pdf
+* https://michelson-morley.crudfactory.com/two-channel-bell-3.pdf
+* https://michelson-morley.crudfactory.com/two-qubit-register-model.pdf
 * https://michelson-morley.crudfactory.com/led-model.pdf
 * https://michelson-morley.crudfactory.com/tunnel-diode-model.pdf
 * https://michelson-morley.crudfactory.com/cmos-inverter-model.pdf
+* https://michelson-morley.crudfactory.com/foxhole-detector-model.pdf
 
 And here is the inference engine’s rewording of my own ellipse
 analysis:
