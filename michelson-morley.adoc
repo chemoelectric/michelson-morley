@@ -70,6 +70,12 @@ physics. I imagine Einstein blew it off because he was very young and
 already an international celebrity for it! Often it is better to be
 rejected and search for the truth alone, over a lifetime.
 
+This new view of Michelson-Morley leads easily to Einstein’s dream of
+a unification of Maxwell’s equations and gravitation. There is no
+“curved space-time.” Instead, because now mass is equivalent to an
+electromagnetic energy, Newton’s law of universal gravitation is
+incorporated as a units conversion.
+
 == Electromagnetic Doppler shift
 
 === The transverse electromagnetic Doppler shift
