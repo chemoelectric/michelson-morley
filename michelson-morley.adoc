@@ -1,4 +1,4 @@
-= Electromagnetic waves have inertia
+= The energy density of electromagnetism is mass density
 Barry Schwartz
 :stem: latexmath
 :toc: left
@@ -14,12 +14,13 @@ https://github.com/chemoelectric/michelson-morley#
 == Introduction
 
 Transmission antennas emit a substance radially at a velocity \(c\).
-The substance then moves inertially along with the antenna. Therefore
-the transmissions exhibit the Michelson-Morley effect. Special
-Relativity incorrectly introduces time dilation and length
-contraction, without bothering to explain the Michelson-Morley effect.
-Here we have an explanation, and there is no time dilation nor length
-contraction.
+The substance then moves inertially along with the antenna. The energy
+density of electromagnetism is equivalent to a mass density, and the
+waves act as massive objects. Therefore the transmissions exhibit the
+Michelson-Morley effect. Special Relativity incorrectly introduces
+time dilation and length contraction, without bothering to explain the
+Michelson-Morley effect. Here we have an explanation, and there is no
+time dilation nor length contraction.
 
 Thus this new theory supplies a _mechanical_ explanation for the
 Michelson-Morley phenomenon: the waves themselves, instead of a
@@ -623,9 +624,26 @@ I try to give the search algorithm a lot of information, to help it
 find any material that might be even slightly relevant. It is a search
 and syntactic arrangement algorithm, not an “intelligence.”
 
-Here are links to the search dialog and a PDF of the dialog:
+Here is a link to a PDF of the original dialog:
 
-https://www.google.com/search?client=firefox-b-1-d&channel=entpr&q=newtons+laws+of+motion+in+4D+euclidean+geometric+algebra&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832a9BVCEiB2iPJNekNderQwLP8msUKsz-6AMxGyueJZ9cK2mNBy2II_6WvkKSZWdeggc7a5-PkN1W4krCU8bvvb222ld7DslYVIxVGS6hS5ngUrVOs5a9c652d2gi9qX87nTl4scoXT_hidx4oPA6XMgdJfhqS_GginZfx551wGsGgUQlfw&aep=10&ntc=1&mstk=AUtExfCw8eSiOaDfuqtMNI3ZOg5s2NLxXQwF3SWcvahUkMVPuJ2NiRIoIpp9QDhyUApvJgFJjGlYvaCGcaxvk-a-y8zFzqe13vjMi98PWs1ocNGfMQyLEDnYaI_gmG0urabvP96oERLNSBiCjzJsGqf9wubzQvWdxDLfZ9kTuX8ptn_JkWcurD91bLwllFItYsJwwbMYHyduDeKohmaBYoVB9IVXxIKpXuOnn6xJCFnbH080nFXbjq8BFsSHxTCtOqTGYXYBWNDg6FA2g3vqnK71QTd_lRxGiYOGERc3ME5qlXCk5cTr7S2vTB4s382H2_WZsObJPC2I-in59AdsIP9ymW1gm3q0Cgu1SrVktaCiL8iismYoEtGNRBT9m_d-vHbsHtj9mHqcFE2Z1_IPxqT_0gtD286P6wYz-acNq6CYpZ5v6am9kglFmyg1AkX5_CknLnpla0kIuWZ0klqPP1LRPZrsDgeVkmMHyckizn5MMugklXq9AptevD6oFI-dlGJBTpQkznjaeDGAwIT-gvYsuiatkzcSzUc&aioh=3&csuir=1&mtid=d89PavvqOLuDmLQPncPi6Qs&atvm=2&lns_mode=cvst&udm=50
+* https://michelson-morley.crudfactory.com/fieldtheory-20260710.151100.pdf
 
-https://michelson-morley.crudfactory.com/fieldtheory-20260710.151100.pdf
+But here are PDFs to more organized and updated sessions with a more
+powerful inference engine and a better geometric algebra:
 
+* https://michelson-morley.crudfactory.com/fields1.pdf
+* https://michelson-morley.crudfactory.com/fields2.pdf
+* https://michelson-morley.crudfactory.com/fields3.pdf
+* https://michelson-morley.crudfactory.com/fields4.pdf
+* https://michelson-morley.crudfactory.com/led-model.pdf
+* https://michelson-morley.crudfactory.com/tunnel-diode-model.pdf
+* https://michelson-morley.crudfactory.com/cmos-inverter-model.pdf
+
+And here is the inference engine’s rewording of my own ellipse
+analysis:
+
+* https://michelson-morley.crudfactory.com/elliptic-model-of-doppler-shift.pdf
+
+You should take into account that this is based on my own work. Much
+of the other stuff is based largely on empirical and theoretical work
+of others, but adapted to my field theory.

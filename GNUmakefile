@@ -66,7 +66,12 @@ upload-html: \
 		scale-equivalence.png \
 		ellipse.png \
 		doppler1.png \
-		fieldtheory-20260710.151100.pdf
+		fieldtheory-20260710.151100.pdf \
+		elliptic-model-of-doppler-shift.pdf \
+		fields1.pdf fields2.pdf \
+		fields3.pdf fields4.pdf \
+		led-model.pdf tunnel-diode-model.pdf \
+		cmos-inverter-model.pdf
 	$(SCP) $(<) $(WEBSITE)/index.html
 	$(SCP) $(filter %.png %.pdf,$(^)) $(WEBSITE)/
 #upload-pdf:
