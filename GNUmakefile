@@ -68,6 +68,7 @@ upload-html: \
 		doppler1.png \
 		fieldtheory-20260710.151100.pdf \
 		elliptic-model-of-doppler-shift.pdf \
+		doppler-shift.pdf \
 		einstein-field-theory.pdf \
 		fields1.pdf fields2.pdf \
 		fields3.pdf fields4.pdf \

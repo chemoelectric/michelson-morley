@@ -660,6 +660,7 @@ not play dice with the universe!” Which led to Bohr’s infamous retort,
 * https://michelson-morley.crudfactory.com/fields2.pdf
 * https://michelson-morley.crudfactory.com/fields3.pdf
 * https://michelson-morley.crudfactory.com/fields4.pdf
+* https://michelson-morley.crudfactory.com/doppler-shift.pdf
 * https://michelson-morley.crudfactory.com/two-slit.pdf
 * https://michelson-morley.crudfactory.com/bell-and-clauser-errors.pdf
 * https://michelson-morley.crudfactory.com/stern-gerlach-eprb.pdf
