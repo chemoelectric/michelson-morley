@@ -660,12 +660,16 @@ not play dice with the universe!” Which led to Bohr’s infamous retort,
 * https://michelson-morley.crudfactory.com/fields2.pdf
 * https://michelson-morley.crudfactory.com/fields3.pdf
 * https://michelson-morley.crudfactory.com/fields4.pdf
+* https://michelson-morley.crudfactory.com/two-slit.pdf
 * https://michelson-morley.crudfactory.com/bell-and-clauser-errors.pdf
 * https://michelson-morley.crudfactory.com/stern-gerlach-eprb.pdf
 * https://michelson-morley.crudfactory.com/two-channel-bell-1.pdf
 * https://michelson-morley.crudfactory.com/two-channel-bell-2.pdf
 * https://michelson-morley.crudfactory.com/two-channel-bell-3.pdf
+* https://michelson-morley.crudfactory.com/calcium-radiative-cascade.pdf
 * https://michelson-morley.crudfactory.com/two-qubit-register-model.pdf
+* https://michelson-morley.crudfactory.com/two-qubit-hilbert-space.pdf
+* https://michelson-morley.crudfactory.com/two-qubit-hilbert-space-as-propositions.pdf
 * https://michelson-morley.crudfactory.com/led-model.pdf
 * https://michelson-morley.crudfactory.com/tunnel-diode-model.pdf
 * https://michelson-morley.crudfactory.com/cmos-inverter-model.pdf
