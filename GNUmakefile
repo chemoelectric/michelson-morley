@@ -61,6 +61,8 @@ veryclean::
 upload: upload-html #upload-pdf
 upload-html: \
 		michelson-morley.html \
+		op-amp-qubit-register.html \
+		digital-grovers-algorithm.html \
 		doppler-transverse.png \
 		doppler-longitudinal.png \
 		scale-equivalence.png \
@@ -72,6 +74,7 @@ upload-html: \
 		einstein-field-theory.pdf \
 		fields1.pdf fields2.pdf \
 		fields3.pdf fields4.pdf \
+		water-molecule.pdf \
 		two-slit.pdf \
 		bell-and-clauser-errors.pdf \
 		stern-gerlach-eprb.pdf \
@@ -82,10 +85,13 @@ upload-html: \
 		led-model.pdf tunnel-diode-model.pdf \
 		cmos-inverter-model.pdf \
 		foxhole-detector-model.pdf \
+		transistor-2N2222-model.pdf \
+		transistor-2N2907-model.pdf \
+		transistor-2N5458-2N5460-model.pdf \
 		two-qubit-register-model.pdf \
 		two-qubit-hilbert-space.pdf \
 		two-qubit-hilbert-space-as-propositions.pdf
 	$(SCP) $(<) $(WEBSITE)/index.html
-	$(SCP) $(filter %.png %.pdf,$(^)) $(WEBSITE)/
+	$(SCP) $(filter-out $(<),$(^)) $(WEBSITE)/
 #upload-pdf:
 #	$(SCP) $(^) $(WEBSITE)

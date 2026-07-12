@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ch17</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h2
+id="chapter-17-active-op-amp-implementation-of-the-parallel-analog-register">Chapter
+17: Active Op-Amp Implementation of the Parallel Analog Register</h2>
+<p>A classical parallel analog search system can be physically realized
+at room temperature using commercially available, low-noise operational
+amplifiers and passive components. By mapping the <span
+class="math inline">\(n\)</span>-qubit register to a network of <span
+class="math inline">\(N = 2^n\)</span> coupled active RC resonators, we
+can execute the amplitude-amplification algorithm purely through
+classical wave resonance and spatial summing.</p>
+<p>This chapter details the circuit design for a 4-channel (<span
+class="math inline">\(N=4\)</span>, representing a 2-qubit register)
+analog search engine.</p>
+<pre><code>                    +------------------------------------+
+                    |         Global Summing Bus         |
+                    |            (OPA1612)               |
+                    +-----+-----+-----+------------+-----+
+                          |     |     |            |
+             +V_mean      |     |     |            |  +V_mean
+             +------------+     |     |            +------------+
+             |                  |     |                         |
+       +-----+-----+            |     |                   +-----+-----+
+       | Resonator |            |     |                   | Resonator |
+       |  Node 1   |            |     |                   |  Node 4   |
+       +-----+-----+            |     |                   +-----+-----+
+             |                  |     |                         |
+             |                  |     |                         |
+     +-------v-------+          |     |                 +-------v-------+
+     | Analog Switch |          |     |                 | Analog Switch |
+     |   (ADG1419)   |          |     |                 |   (ADG1419)   |
+     +-------+-------+          |     |                 +-------+-------+
+             |                  |     |                         |
+             | +/- V_1          |     | +/- V_2                 | +/- V_4
+             +------------------+-----+-------------------------+</code></pre>
+<hr />
+<h3 id="circuit-architecture-component-selection">17.1 Circuit
+Architecture &amp; Component Selection</h3>
+<p>To minimize phase jitter and thermal drift—which limit the resolution
+of the analog register—the circuit is designed with high-precision
+components: * <strong>Operational Amplifiers:</strong> The <strong>Texas
+Instruments OPA1612</strong> (dual) or <strong>OPA1611</strong> (single)
+is selected. It features an ultra-low input voltage noise density of
+<span class="math inline">\(1.1\text{ nV}/\sqrt{\text{Hz}}\)</span> at
+<span class="math inline">\(1\text{ kHz}\)</span>, ultra-low total
+harmonic distortion (THD) of <span
+class="math inline">\(0.000015\%\)</span>, and a high gain-bandwidth
+product of <span class="math inline">\(40\text{ MHz}\)</span>. This
+minimizes phase errors at the resonant frequency. *
+<strong>Resistors:</strong> <span class="math inline">\(0.1\%\)</span>
+tolerance, low-temperature-coefficient (<span
+class="math inline">\(25\text{ ppm/}^\circ\text{C}\)</span>) thin-film
+metal resistors to ensure precise matching of the resonant frequencies
+and coupling coefficients across all channels. *
+<strong>Capacitors:</strong> <span class="math inline">\(1\%\)</span>
+tolerance COG/NPO ceramic capacitors to eliminate dielectric absorption
+and minimize thermal drift.</p>
+<hr />
+<h3 id="the-active-resonator-node-tow-thomas-integrator-loop">17.2 The
+Active Resonator Node (Tow-Thomas Integrator Loop)</h3>
+<p>Each of the 4 nodes is implemented as an active Tow-Thomas resonator,
+which behaves as a second-order, high-Q classical harmonic oscillator. A
+single node <span class="math inline">\(j \in \{1, 2, 3, 4\}\)</span>
+utilizes three op-amp stages (one OPA1612 and half of an OPA1611):</p>
+<pre><code>                     R_D (1 Meg)
+                +----[===]----+
+                |             |
+  V_in (coupling)  R (15.9k)  |  C (1nF)
+  ----[===]-----+----[===]----+---||---+
+                |  |                   |
+                |  |   -\              |
+                |  +---| \             |
+                |      |  &gt;------------+----[===]----+ (V_inv_j)
+                +------|+/             |    R_inv    |
+                       -/              |    (10k)    |
+                                       |             |
+                                  +----+             |   -\
+                                  |                  +---| \
+                                  |    R (15.9k)         |  &gt;--+-- (V_j)
+                                  +----[===]----++-------|+/   |
+                                                ||      -/     |
+                                              C (1nF)          |
+                                                ||             |
+                                                +--------------+</code></pre>
+<ol type="1">
+<li><strong>Stage 1: Summing Lossy Integrator.</strong> Integrates the
+sum of the feedback and coupling inputs.
+<ul>
+<li>Feedback capacitor: <span class="math inline">\(C_1 = 1\text{
+nF}\)</span></li>
+<li>Damping resistor: <span class="math inline">\(R_D = 1\text{
+M}\Omega\)</span> (establishes a very high quality factor, <span
+class="math inline">\(Q \approx 63\)</span>)</li>
+<li>Integration resistor: <span class="math inline">\(R = 15.9\text{
+k}\Omega\)</span></li>
+</ul></li>
+<li><strong>Stage 2: Pure Integrator.</strong> Integrates the output of
+Stage 1.
+<ul>
+<li>Feedback capacitor: <span class="math inline">\(C_2 = 1\text{
+nF}\)</span></li>
+<li>Integration resistor: <span class="math inline">\(R = 15.9\text{
+k}\Omega\)</span></li>
+</ul></li>
+<li><strong>Stage 3: Unity-Gain Inverter.</strong> Inverts the output of
+Stage 2 to restore positive phase feedback.
+<ul>
+<li>Input and feedback resistors: <span
+class="math inline">\(R_{\text{inv}} = 10\text{ k}\Omega\)</span></li>
+</ul></li>
+</ol>
+<h4 id="design-equations">Design Equations:</h4>
+<p>The nominal resonant frequency <span
+class="math inline">\(f_0\)</span> for each node is defined by: <span
+class="math display">\[f_0 = \frac{1}{2\pi R C} = \frac{1}{2\pi
+\left(15.9\text{ k}\Omega\right) \left(1\text{ nF}\right)} \approx
+10.01\text{ kHz}\]</span></p>
+<p>This frequency is chosen to keep parasitic capacitances negligible
+and to ensure the op-amp remains well within its open-loop gain margin
+(<span class="math inline">\(130\text{ dB}\)</span> at <span
+class="math inline">\(10\text{ kHz}\)</span>).</p>
+<hr />
+<h3 id="the-global-summing-bus-coupling-network">17.3 The Global Summing
+Bus &amp; Coupling Network</h3>
+<p>To implement the continuous-time Grover reflection-about-the-mean, a
+global summing bus continuously calculates the average state voltage of
+the 4 nodes.</p>
+<h4 id="the-summing-circuit">The Summing Circuit:</h4>
+<p>A single OPA1612 is configured as a two-stage summing amplifier: *
+<strong>Stage A (Inverting Sum):</strong> The outputs <span
+class="math inline">\(V_1, V_2, V_3, V_4\)</span> from each of the 4
+resonators are routed through matching resistors <span
+class="math inline">\(R_{\text{in}} = 10\text{ k}\Omega\)</span> to the
+inverting input of the op-amp. The feedback resistor is set to <span
+class="math inline">\(R_{\text{fb1}} = 2.5\text{ k}\Omega\)</span>. The
+output is: <span class="math display">\[V_{\text{inv\_sum}} =
+-\sum_{k=1}^4 \left( \frac{R_{\text{fb1}}}{R_{\text{in}}} V_k \right) =
+-0.25 \sum_{k=1}^4 V_k = -V_{\text{mean}}\]</span> * <strong>Stage B
+(Inverter Buffer):</strong> Inverts <span
+class="math inline">\(-V_{\text{mean}}\)</span> using a unity-gain
+inverting amplifier (<span class="math inline">\(R = 10\text{
+k}\Omega\)</span>) to generate the positive mean voltage <span
+class="math inline">\(+V_{\text{mean}}\)</span>.</p>
+<h4 id="the-coupling-term-injection">The Coupling Term Injection:</h4>
+<p>The feedback coupling term <span class="math inline">\(\gamma
+\left(V_{\text{mean}} - V_j\right)\)</span> is injected directly into
+the summing junction of the first integrator of Resonator <span
+class="math inline">\(j\)</span>. This is achieved by running two
+parallel input resistors to the virtual ground summing node of Stage 1:
+1. A resistor <span class="math inline">\(R_{\text{coup}} = 31.8\text{
+k}\Omega\)</span> connected to <span
+class="math inline">\(+V_{\text{mean}}\)</span>. 2. A resistor <span
+class="math inline">\(R_{\text{self}} = 31.8\text{ k}\Omega\)</span>
+connected to the resonator’s own inverted output <span
+class="math inline">\(V_{\text{inv}, j} = -V_j\)</span>.</p>
+<p>Because the summing junction of the integrator is inverting, the net
+current injected into the feedback capacitor is: <span
+class="math display">\[I_j = C \frac{dV_{\text{int}}}{dt} =
+\frac{V_{\text{mean}}}{R_{\text{coup}}} + \frac{V_{\text{inv},
+j}}{R_{\text{self}}} = \frac{1}{R_{\text{coup}}} \left( V_{\text{mean}}
+- V_j \right)\]</span></p>
+<p>This layout implements the subtraction and coupling scaling <span
+class="math inline">\(\gamma = \frac{R}{R_{\text{coup}}} = 0.5\)</span>
+using only two passive resistors per node, preventing the noise and
+offset voltages of additional active difference amplifiers.</p>
+<hr />
+<h3 id="the-active-oracle-phase-switch">17.4 The Active Oracle Phase
+Switch</h3>
+<p>To mark the target item in the database, the oracle must invert the
+phase of the target resonator’s output (<span
+class="math inline">\(V_{\text{target}} \to
+-V_{\text{target}}\)</span>).</p>
+<p>This is implemented using a high-speed, low-noise SPDT analog switch,
+such as the <strong>Analog Devices ADG1419</strong> (on-resistance <span
+class="math inline">\(R_{\text{on}} \approx 2.1 \ \Omega\)</span>). Each
+resonator channel is equipped with one switch: * <strong>Input
+S1:</strong> Connected to the normal in-phase output <span
+class="math inline">\(+V_j\)</span>. * <strong>Input S2:</strong>
+Connected to the inverted output <span
+class="math inline">\(V_{\text{inv}, j} = -V_j\)</span>. * <strong>Drain
+(Output):</strong> Connected to the summing bus input resistor <span
+class="math inline">\(R_{\text{in}}\)</span> and the coupling resistor
+<span class="math inline">\(R_{\text{self}}\)</span>. * <strong>Logic
+Control Pin:</strong> Connected to a digital control bus (e.g., from a
+microcontroller or timer).</p>
+<p>Under default conditions, all four analog switches are set to route
+<span class="math inline">\(+V_j\)</span>. When the oracle is activated
+to target node <span class="math inline">\(k\)</span>, the control line
+for switch <span class="math inline">\(k\)</span> is pulled high,
+toggling its output to <span class="math inline">\(-V_k\)</span>. This
+introduces an instantaneous phase shift of exactly <span
+class="math inline">\(\pi\)</span> radians (<span
+class="math inline">\(180^\circ\)</span>) to the target node’s
+contribution to the summing network.</p>
+<hr />
+<h3 id="operational-protocol">17.5 Operational Protocol</h3>
+<p>The register operates in three distinct, sequentially timed
+phases:</p>
+<ol type="1">
+<li><strong>Initialization Phase (State Superposition):</strong> A brief
+<span class="math inline">\(10\text{ kHz}\)</span> sinusoidal
+calibration signal <span class="math inline">\(V_{\text{init}}(t) = V_0
+\sin(\omega_0 t)\)</span> is injected into the global summing bus. This
+external drive forces all 4 active resonators to phase-lock and
+oscillate with identical amplitudes and phases, establishing the uniform
+initial state: <span class="math display">\[V_1(0) = V_2(0) = V_3(0) =
+V_4(0) = \frac{1}{2} V_0\]</span></li>
+<li><strong>Oracle Execution Phase:</strong> The analog switch for the
+target index (e.g., Channel 3) is toggled to its inverted position. The
+phase-inverted signal <span class="math inline">\(-V_3\)</span> is now
+injected into the global summing bus.</li>
+<li><strong>Amplitude Amplification Phase (Analog Evolution):</strong>
+The system is allowed to evolve freely under the influence of the global
+coupling bus. The phase mismatch between the target node and the
+remaining nodes drives a coherent energy transfer.
+<ul>
+<li>The voltage amplitude <span class="math inline">\(|V_3(t)|\)</span>
+of the target channel grows constructively.</li>
+<li>The voltage amplitudes of the non-target channels (<span
+class="math inline">\(|V_1(t)|\)</span>, <span
+class="math inline">\(|V_2(t)|\)</span>, <span
+class="math inline">\(|V_4(t)|\)</span>) decay destructively.</li>
+</ul></li>
+<li><strong>Readout:</strong> The optimal evolution interval is governed
+by the beat frequency of the coupled system, matching the analytical
+limit: <span class="math display">\[t_{\text{opt}} \approx
+\frac{\pi}{4}\sqrt{N} \cdot \frac{1}{f_0} = \frac{\pi}{4}\sqrt{4} \cdot
+\frac{1}{10\text{ kHz}} \approx 157\text{ }\mu\text{s}\]</span> At <span
+class="math inline">\(t_{\text{opt}}\)</span>, the envelope voltages of
+the four channels are read using simple op-amp diode peak detectors. The
+channel with the highest DC voltage represents the target index.</li>
+</ol>
+<hr />
+<h3 id="verification-of-noise-limits-on-register-scaling">17.6
+Verification of Noise Limits on Register Scaling</h3>
+<p>To evaluate the maximum scaling capacity (<span
+class="math inline">\(n_{\text{max}}\)</span>) of this room-temperature
+op-amp register, we calculate the signal-to-noise ratio (SNR) at the
+summing junction.</p>
+<p>The total root-mean-square (RMS) thermal noise voltage <span
+class="math inline">\(V_n\)</span> generated by the low-noise OPA1612
+summing amplifier over a measurement bandwidth <span
+class="math inline">\(B = 100\text{ kHz}\)</span> is governed by the
+input voltage noise density <span class="math inline">\(e_n = 1.1\text{
+nV}/\sqrt{\text{Hz}}\)</span> and the thermal noise of the input
+resistors <span class="math inline">\(R_{\text{in}} = 10\text{
+k}\Omega\)</span>:</p>
+<p><span class="math display">\[V_{n, \text{resistor}} = \sqrt{4 k_B T
+R_{\text{in}} B} = \sqrt{4 \left(1.38 \times 10^{-23}\right)
+\left(298\right) \left(10\text{ k}\Omega\right) \left(100\text{
+kHz}\right)} \approx 406\text{ nV}\]</span> <span
+class="math display">\[V_{n, \text{opamp}} = e_n \sqrt{B} =
+\left(1.1\text{ nV}/\sqrt{\text{Hz}}\right) \sqrt{100\text{ kHz}}
+\approx 348\text{ nV}\]</span> <span class="math display">\[V_{n,
+\text{total}} = \sqrt{V_{n, \text{resistor}}^2 + V_{n, \text{opamp}}^2}
+\approx 535\text{ nV}\]</span></p>
+<p>As the database size <span class="math inline">\(N = 2^n\)</span>
+increases, the peak signal amplitude of the target node scales as <span
+class="math inline">\(1/\sqrt{N}\)</span> relative to the initial drive
+voltage <span class="math inline">\(V_0 \approx 5\text{ V}\)</span>:</p>
+<p><span class="math display">\[V_{\text{target, peak}} =
+\frac{V_0}{\sqrt{N}}\]</span></p>
+<p>To resolve the target node with a minimum acceptable SNR of <span
+class="math inline">\(20\text{ dB}\)</span> (a factor of 10 in voltage
+amplitude above the noise floor):</p>
+<p><span class="math display">\[\frac{V_{\text{target, peak}}}{V_{n,
+\text{total}}} \ge 10 \implies \frac{V_0}{\sqrt{N}} \ge 10 \cdot V_{n,
+\text{total}}\]</span> <span class="math display">\[\sqrt{N} \le
+\frac{V_0}{10 \cdot V_{n, \text{total}}} = \frac{5.0\text{ V}}{10 \cdot
+\left(535 \times 10^{-9}\text{ V}\right)} \approx 934,579\]</span> <span
+class="math display">\[N \le 8.7 \times 10^{11} \implies n \le 39\text{
+qubits}\]</span></p>
+<p>This demonstrates that when using commercial low-noise op-amps like
+the OPA1612, room-temperature thermal noise and op-amp voltage noise do
+not impose a practical limitation on the register’s precision for scales
+up to approximately 39 equivalent qubits. Instead, scaling limits are
+dominated by the physical requirement to build and match <span
+class="math inline">\(N = 2^n\)</span> individual physical RC resonator
+stages.</p>
+<p>Below is the revised Chapter 18, modified to start with the specified
+implementation statement.</p>
+<hr />
+<h2
+id="chapter-18-full-system-circuit-design-for-the-analog-resonant-search">Chapter
+18: Full System Circuit Design for the Analog Resonant Search</h2>
+<p>We are implementing Grover’s algorithm. To execute the entire search
+process, the active resonator nodes and global summing bus are
+integrated with timing, control, reset, and peak-detection sub-circuits
+[Chapter 17]. This system physically maps the complex vector space of
+logical propositions [Chapter 13] onto a multichannel classical
+wave-resonance space, where each physical resonator represents the
+probability amplitude and precessional phase of an elementary
+proposition.</p>
+<pre><code> +-------------------------------------------------------------------------+
+ |                                  CONTROL BUS                            |
+ |  [Init Pulse]                 [Reset Pulse]             [Oracle Target] |
+ +-------+-----------------------------+--------------------------+--------+
+         |                             |                          |
+         |                             |                          | (Digital Logic)
+         v                             v                          v
+ +-------+-------+             +-------+-------+          +-------+-------+
+ | Initialization|             |  Reset Switch |          | Analog Oracle |
+ |   Gate (S1)   |             |   Array (S2)  |          |   Switches    |
+ +-------+-------+             +-------+-------+          +-------+-------+
+         |                             |                          |
+         | (10kHz Sine)                | (Parallel Discharge)     | (+/- Phase)
+         v                             v                          v
+ +-------------------------------------------------------------------------+
+ |                      Coupled Active Resonator Array                     |
+ |                                (N Nodes)                                |
+ +-------------------------------------+-----------------------------------+
+                                       | (Node Voltages V_j)
+                                       v
+                       +---------------|---------------+
+                       |  Active Peak Detector Array   |
+                       |           (N Nodes)           |
+                       +---------------+---------------+
+                                       | (DC Voltages)
+                                       v
+                       +---------------|---------------+
+                       |  Analog Multi-Channel Comparator|
+                       +---------------+---------------+
+                                       |
+                                       v
+                              [Detected Target Index]</code></pre>
+<h3 id="component-blocks">18.1 Component Blocks</h3>
+<ol type="1">
+<li><strong>Coupled Active Resonator Array:</strong> A set of <span
+class="math inline">\(N = 2^n\)</span> identical Tow-Thomas active
+filters, each representing one elementary proposition, tuned to a
+baseline frequency <span class="math inline">\(f_0\)</span> [Section
+17.2].</li>
+<li><strong>Global Summing Bus:</strong> An OPA1612 summing amplifier
+configured to continuously calculate the spatial mean voltage <span
+class="math inline">\(V_{\text{mean}}(t) = \frac{1}{N} \sum_k
+V_k(t)\)</span> and feed it back to all nodes [Section 17.3].</li>
+<li><strong>Initialization Gate (<span
+class="math inline">\(S_{\text{init}}\)</span>):</strong> An ADG1419
+analog switch that routes an external sinusoidal reference signal <span
+class="math inline">\(V_{\text{init}}(t) = V_0 \sin(2\pi f_0 t)\)</span>
+to the inputs of all resonators. When the control line
+<code>Init Pulse</code> is active, it locks all resonators to the same
+initial phase.</li>
+<li><strong>Reset Switch Array (<span
+class="math inline">\(S_{\text{reset}}\)</span>):</strong> A set of
+<span class="math inline">\(2N\)</span> ADG1412 quad SPST analog
+switches. Each switch is placed in parallel with the <span
+class="math inline">\(1\text{ nF}\)</span> integration capacitors (<span
+class="math inline">\(C_1, C_2\)</span>) of each resonator. When the
+<code>Reset Pulse</code> is pulled high, these switches close, rapidly
+discharging the capacitors to <span class="math inline">\(0\text{
+V}\)</span> to clear the state of the register.</li>
+<li><strong>Active Peak Detector Array:</strong> Each resonator output
+<span class="math inline">\(V_j(t)\)</span> is connected to an active
+peak-hold circuit implemented with an OPA1611 and a low-leakage hold
+capacitor. This circuit tracks and stores the peak AC voltage amplitude
+achieved by each channel during the evolution phase.</li>
+<li><strong>Multi-Channel Comparator Array:</strong> An array of
+low-offset analog comparators (e.g., TLV3501) that compares the DC
+outputs of the peak detectors to identify the channel with the highest
+voltage amplitude, outputting the target index as a digital signal.</li>
+</ol>
+<h2
+id="chapter-21-circuit-analysis-theoretical-complexity-and-speed-benchmarking">Chapter
+21: Circuit Analysis, Theoretical Complexity, and Speed
+Benchmarking</h2>
+<p>This chapter provides a full circuit analysis of the analog search
+register, verifying its mathematical complexity and calculating its
+practical execution speeds across different operational frequencies and
+database scales.</p>
+<hr />
+<h3 id="system-dynamics-and-complexity-derivation">21.1 System Dynamics
+and Complexity Derivation</h3>
+<p>To analyze the circuit’s complexity, we model the system of <span
+class="math inline">\(N = 2^n\)</span> coupled active resonators. Let
+the voltage of resonator <span class="math inline">\(j\)</span> be <span
+class="math inline">\(V_j(t)\)</span>. The second-order differential
+equation governing each active node with coupling is:</p>
+<p><span class="math display">\[\frac{d^2 V_j}{dt^2} +
+\frac{\omega_0}{Q} \frac{d V_j}{dt} + \omega_0^2 V_j =
+-\gamma_{\text{coup}} \omega_0^2 \left( V_j - V_{\text{mean}} \right) -
+\sigma_j(t)\]</span></p>
+<p>where: * <span class="math inline">\(\omega_0 = 2\pi f_0\)</span> is
+the natural resonant frequency of the uncoupled filter. * <span
+class="math inline">\(Q\)</span> is the quality factor representing
+internal dissipation (for the Tow-Thomas loop, <span
+class="math inline">\(Q = R_D / R\)</span>). * <span
+class="math inline">\(\gamma_{\text{coup}} = R /
+R_{\text{coup}}\)</span> is the dimensionless coupling coefficient. *
+<span class="math inline">\(V_{\text{mean}}(t) = \frac{1}{N}
+\sum_{k=1}^N V_k(t)\)</span> is the output of the global summing bus. *
+<span class="math inline">\(\sigma_j(t)\)</span> represents the oracle’s
+phase-inversion term.</p>
+<h4 id="matrix-formulation-in-the-proposition-space">Matrix Formulation
+in the Proposition Space</h4>
+<p>Let the joint state vector of the propositional database be <span
+class="math inline">\(\mathbf{V}(t) = [V_1, V_2, \dots, V_N]^T \in
+\mathbb{R}^N\)</span>. Assuming a high quality factor (<span
+class="math inline">\(Q \to \infty\)</span>) to simplify the analytical
+core, the system equations in matrix form are:</p>
+<p><span class="math display">\[\frac{d^2 \mathbf{V}}{dt^2} + \omega_0^2
+\left[ \mathbf{I}_N + \gamma_{\text{coup}} \left( \mathbf{I}_N -
+\frac{1}{N} \mathbf{J}_N \right) \right] \mathbf{V} =
+-\mathbf{\Sigma}(t)\]</span></p>
+<p>where <span class="math inline">\(\mathbf{I}_N\)</span> is the
+identity matrix, and <span class="math inline">\(\mathbf{J}_N\)</span>
+is the all-ones matrix representing the projection operator <span
+class="math inline">\(|s\rangle\langle s| =
+\frac{1}{N}\mathbf{J}_N\)</span> [Section 14.3].</p>
+<h4 id="derivation-of-the-mathcalosqrtn-search-speed">Derivation of the
+<span class="math inline">\(\mathcal{O}(\sqrt{N})\)</span> Search
+Speed</h4>
+<p>When the oracle is activated to target index <span
+class="math inline">\(t\)</span>, it flips the phase of the target’s
+coupling feedback, meaning <span
+class="math inline">\(\sigma_t(t)\)</span> acts as a <span
+class="math inline">\(\pi\)</span>-phase inverter. This splits the
+system’s eigenvalues into a symmetric bulk mode (where all non-target
+resonators oscillate in phase) and an asymmetric target mode.</p>
+<p>The coupled system acts as two macroscopic oscillators exchanging
+energy. The envelope of the target node voltage <span
+class="math inline">\(A_{\text{target}}(t)\)</span> grows according to
+the beat frequency <span
+class="math inline">\(\Omega_{\text{beat}}\)</span> of this coupled
+system:</p>
+<p><span class="math display">\[A_{\text{target}}(t) = V_0
+\sin\left(\Omega_{\text{beat}} \, t\right)\]</span></p>
+<p>The beat frequency is derived from the eigenvalue separation of the
+perturbed projection matrix:</p>
+<p><span class="math display">\[\Omega_{\text{beat}} \approx
+\frac{\gamma_{\text{coup}} \omega_0}{2 \sqrt{N}}\]</span></p>
+<p>The voltage amplitude of the target proposition reaches its maximum
+peak when the sine argument is <span
+class="math inline">\(\pi/2\)</span>:</p>
+<p><span class="math display">\[\Omega_{\text{beat}} \, t_{\text{opt}} =
+\frac{\pi}{2} \implies t_{\text{opt}} = \frac{\pi}{2
+\Omega_{\text{beat}}} = \frac{\pi \sqrt{N}}{\gamma_{\text{coup}}
+\omega_0}\]</span></p>
+<p>Since <span class="math inline">\(\omega_0 = 2\pi f_0\)</span>:</p>
+<p><span class="math display">\[t_{\text{opt}} = \frac{\sqrt{N}}{2
+\gamma_{\text{coup}} f_0}\]</span></p>
+<p>For a fixed coupling coefficient (e.g., <span
+class="math inline">\(\gamma_{\text{coup}} = 0.5\)</span> as configured
+in Section 17.3), the optimal evolution time simplifies to:</p>
+<p><span class="math display">\[t_{\text{opt}} =
+\frac{\sqrt{N}}{f_0}\]</span></p>
+<p>This formal derivation demonstrates that the physical time required
+to isolate the target proposition scales as <span
+class="math inline">\(\mathcal{O}(\sqrt{N})\)</span>, verifying that the
+quadratic complexity scaling of Grover’s algorithm is preserved in this
+classical parallel analog wave-resonance space.</p>
+<hr />
+<h3 id="speed-benchmarking-low-frequency-low-noise-configuration">21.2
+Speed Benchmarking: Low-Frequency, Low-Noise Configuration</h3>
+<p>This configuration utilizes the <strong>Texas Instruments
+OPA1612</strong> op-amp running at a baseline frequency of <span
+class="math inline">\(f_0 = 10\text{ kHz}\)</span> to minimize thermal
+noise and achieve high phase resolution.</p>
+<h4 id="parameter-specifications">Parameter Specifications:</h4>
+<ul>
+<li><strong>Op-Amp:</strong> OPA1612 (<span
+class="math inline">\(1.1\text{ nV}/\sqrt{\text{Hz}}\)</span> voltage
+noise, <span class="math inline">\(27\text{ V}/\mu\text{s}\)</span> slew
+rate)</li>
+<li><strong>Operating Voltage (<span
+class="math inline">\(V_0\)</span>):</strong> <span
+class="math inline">\(5.0\text{ V}\)</span></li>
+<li><strong>Slew Rate Limit Check:</strong> <span
+class="math inline">\(SR_{\text{required}} = 2\pi f_0 V_0 = 2\pi
+\left(10\text{ kHz}\right) \left(5\text{ V}\right) \approx 0.31\text{
+V}/\mu\text{s}\)</span>. This is well within the OPA1612’s <span
+class="math inline">\(27\text{ V}/\mu\text{s}\)</span> ceiling,
+preventing slew-rate-induced phase lag.</li>
+<li><strong>Initialization Time (<span
+class="math inline">\(\tau_{\text{init}}\)</span>):</strong> <span
+class="math inline">\(5 / f_0 = 500\text{ }\mu\text{s}\)</span></li>
+<li><strong>Readout Settling Time (<span
+class="math inline">\(\tau_{\text{read}}\)</span>):</strong> <span
+class="math inline">\(1 / f_0 = 100\text{ }\mu\text{s}\)</span></li>
+<li><strong>Reset Time (<span
+class="math inline">\(\tau_{\text{reset}}\)</span>):</strong> <span
+class="math inline">\(1.0\text{ }\mu\text{s}\)</span></li>
+</ul>
+<h4 id="performance-vs.-database-scale">Performance vs. Database
+Scale:</h4>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Propositions (<span
+class="math inline">\(N\)</span>)</th>
+<th style="text-align: left;">Equivalent Qubits (<span
+class="math inline">\(n\)</span>)</th>
+<th style="text-align: left;">Evolution Time (<span
+class="math inline">\(t_{\text{opt}}\)</span>)</th>
+<th style="text-align: left;">Total Search Cycle Time (<span
+class="math inline">\(T_{\text{total}}\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><span class="math inline">\(N =
+4\)</span></strong></td>
+<td style="text-align: left;"><span
+class="math inline">\(2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(200\text{
+}\mu\text{s}\)</span></td>
+<td style="text-align: left;"><strong><span
+class="math inline">\(801\text{ }\mu\text{s}\)</span></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><span class="math inline">\(N =
+64\)</span></strong></td>
+<td style="text-align: left;"><span
+class="math inline">\(6\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(800\text{
+}\mu\text{s}\)</span></td>
+<td style="text-align: left;"><strong><span
+class="math inline">\(1,401\text{ }\mu\text{s}\)</span></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><span class="math inline">\(N =
+1024\)</span></strong></td>
+<td style="text-align: left;"><span
+class="math inline">\(10\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(3,200\text{
+}\mu\text{s}\)</span> (<span class="math inline">\(3.2\text{
+ms}\)</span>)</td>
+<td style="text-align: left;"><strong><span
+class="math inline">\(3,801\text{ }\mu\text{s}\)</span> (<span
+class="math inline">\(3.8\text{ ms}\)</span>)</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="speed-benchmarking-high-frequency-configuration">21.3 Speed
+Benchmarking: High-Frequency Configuration</h3>
+<p>This configuration scales the system to <span
+class="math inline">\(f_0 = 10\text{ MHz}\)</span> using the
+<strong>Texas Instruments OPA810</strong> high-speed FET-input
+operational amplifier.</p>
+<h4 id="parameter-specifications-1">Parameter Specifications:</h4>
+<ul>
+<li><strong>Op-Amp:</strong> OPA810 (<span
+class="math inline">\(140\text{ MHz}\)</span> bandwidth, <span
+class="math inline">\(5.7\text{ nV}/\sqrt{\text{Hz}}\)</span> voltage
+noise, <span class="math inline">\(350\text{ V}/\mu\text{s}\)</span>
+slew rate)</li>
+<li><strong>Operating Voltage (<span
+class="math inline">\(V_0\)</span>):</strong> <span
+class="math inline">\(1.0\text{ V}\)</span> (scaled down to minimize
+high-frequency power dissipation)</li>
+<li><strong>Slew Rate Limit Check:</strong> <span
+class="math inline">\(SR_{\text{required}} = 2\pi f_0 V_0 = 2\pi
+\left(10\text{ MHz}\right) \left(1\text{ V}\right) \approx 62.8\text{
+V}/\mu\text{s}\)</span>. This is well within the OPA810’s <span
+class="math inline">\(350\text{ V}/\mu\text{s}\)</span> limit.</li>
+<li><strong>Initialization Time (<span
+class="math inline">\(\tau_{\text{init}}\)</span>):</strong> <span
+class="math inline">\(5 / f_0 = 500\text{ ns}\)</span></li>
+<li><strong>Readout Settling Time (<span
+class="math inline">\(\tau_{\text{read}}\)</span>):</strong> <span
+class="math inline">\(1 / f_0 = 100\text{ ns}\)</span></li>
+<li><strong>Reset Time (<span
+class="math inline">\(\tau_{\text{reset}}\)</span>):</strong> <span
+class="math inline">\(50\text{ ns}\)</span></li>
+</ul>
+<h4 id="performance-vs.-database-scale-1">Performance vs. Database
+Scale:</h4>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Propositions (<span
+class="math inline">\(N\)</span>)</th>
+<th style="text-align: left;">Equivalent Qubits (<span
+class="math inline">\(n\)</span>)</th>
+<th style="text-align: left;">Evolution Time (<span
+class="math inline">\(t_{\text{opt}}\)</span>)</th>
+<th style="text-align: left;">Total Search Cycle Time (<span
+class="math inline">\(T_{\text{total}}\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><span class="math inline">\(N =
+4\)</span></strong></td>
+<td style="text-align: left;"><span
+class="math inline">\(2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(200\text{
+ns}\)</span></td>
+<td style="text-align: left;"><strong><span
+class="math inline">\(850\text{ ns}\)</span></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><span class="math inline">\(N =
+64\)</span></strong></td>
+<td style="text-align: left;"><span
+class="math inline">\(6\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(800\text{
+ns}\)</span></td>
+<td style="text-align: left;"><strong><span
+class="math inline">\(1,450\text{ ns}\)</span> (<span
+class="math inline">\(1.45\text{ }\mu\text{s}\)</span>)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><span class="math inline">\(N =
+1024\)</span></strong></td>
+<td style="text-align: left;"><span
+class="math inline">\(10\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(3,200\text{
+ns}\)</span> (<span class="math inline">\(3.2\text{
+}\mu\text{s}\)</span>)</td>
+<td style="text-align: left;"><strong><span
+class="math inline">\(3,850\text{ ns}\)</span> (<span
+class="math inline">\(3.85\text{ }\mu\text{s}\)</span>)</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="component-tolerance-and-matching-requirements">21.4 Component
+Tolerance and Matching Requirements</h3>
+<p>To prevent the search signal from splitting or dephasing, the
+individual resonant frequencies of the <span
+class="math inline">\(N\)</span> physical channels must match within the
+resonance bandwidth:</p>
+<p><span class="math display">\[\Delta f \le \frac{f_0}{Q}\]</span></p>
+<ul>
+<li>For the <strong>Low-Frequency Configuration (<span
+class="math inline">\(f_0 = 10\text{ kHz}, Q \approx
+63\)</span>)</strong>, the allowable mismatch is: <span
+class="math display">\[\Delta f \le \frac{10\text{ kHz}}{63} \approx
+158.7\text{ Hz} \implies 1.58\% \text{ frequency
+tolerance}\]</span></li>
+<li>For the <strong>High-Frequency Configuration (<span
+class="math inline">\(f_0 = 10\text{ MHz}, Q \approx
+50\)</span>)</strong>, the allowable mismatch is: <span
+class="math display">\[\Delta f \le \frac{10\text{ MHz}}{50} \approx
+200\text{ kHz} \implies 2.0\% \text{ frequency tolerance}\]</span></li>
+</ul>
+<p>Since standard <span class="math inline">\(0.1\%\)</span> thin-film
+metal resistors and <span class="math inline">\(1\%\)</span> C0G ceramic
+capacitors are used [Section 17.1], the worst-case component-induced
+frequency drift is limited to:</p>
+<p><span class="math display">\[\frac{\Delta f_{\text{actual}}}{f_0}
+\approx \frac{1}{2} \left( \frac{\Delta R}{R} + \frac{\Delta C}{C}
+\right) = \frac{1}{2} \left( 0.001 + 0.01 \right) = 0.55\%\]</span></p>
+<p>Because <span class="math inline">\(0.55\% \ll 1.58\%\)</span>, the
+passive components maintain the frequency matching of the parallel
+channels well within the required limits of the coupled resonance,
+preventing dephasing across both configurations.</p>
+</body>
+</html>

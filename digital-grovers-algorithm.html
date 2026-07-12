@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>foo</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h2
+id="chapter-23-parallel-digital-implementation-of-grovers-algorithm">Chapter
+23: Parallel Digital Implementation of Grover’s Algorithm</h2>
+<p>This chapter presents a parallel digital implementation of Grover’s
+algorithm. By utilizing the analytical discrete-time mapping of the
+propositional space [Chapter 13, Chapter 21], the amplitude state vector
+is propagated directly using parallel geometric reflections on digital
+hardware. This approach maps the state space directly and preserves the
+identical <span class="math inline">\(\mathcal{O}(\sqrt{N})\)</span>
+complexity scaling.</p>
+<h3 id="discrete-analytical-operators">23.1 Discrete Analytical
+Operators</h3>
+<p>Let the joint state of the <span class="math inline">\(N\)</span>
+propositions be represented by the discrete amplitude vector <span
+class="math inline">\(\mathbf{A} = [a_1, a_2, \dots, a_N]^T \in
+\mathbb{R}^N\)</span>. The state transitions are calculated using two
+analytical reflections:</p>
+<ol type="1">
+<li><strong>Analytical Oracle Reflection (<span
+class="math inline">\(\mathbf{U}_w\)</span>):</strong> The phase of the
+target proposition <span class="math inline">\(t\)</span> is inverted,
+which is an exact <span class="math inline">\(O(1)\)</span> parallel
+operation: <span class="math display">\[a_j \to \begin{cases} -a_j &amp;
+\text{if } j = t \\ a_j &amp; \text{otherwise} \end{cases}\]</span></li>
+<li><strong>Analytical Mean Reflection (<span
+class="math inline">\(\mathbf{U}_s\)</span>):</strong> We compute the
+spatial average amplitude: <span class="math display">\[\langle a
+\rangle = \frac{1}{N} \sum_{i=1}^N a_i\]</span> Each state is reflected
+about this mean, which requires an <span class="math inline">\(O(\log
+N)\)</span> parallel reduction: <span class="math display">\[a_j \to
+2\langle a \rangle - a_j\]</span></li>
+</ol>
+<p>By applying these discrete operators sequentially, the target
+proposition’s amplitude is amplified to its maximum peak in exactly:</p>
+<p><span class="math display">\[M = \left\lfloor \frac{\pi}{4} \sqrt{N}
+\right\rfloor \text{ steps}\]</span></p>
+<p>This discrete-time parallel digital implementation operates with
+exact algebraic steps while preserving the identical <span
+class="math inline">\(\mathcal{O}(\sqrt{N})\)</span> complexity scaling
+on parallel hardware.</p>
+<hr />
+<h3 id="ada-2022-implementation">23.2 Ada 2022 Implementation</h3>
+<p>Here is the complete, compilable <strong>Ada 2022</strong> parallel
+digital implementation of Grover’s algorithm.</p>
+<h4 id="package-specification-parallel_grover.ads">1. Package
+Specification (<code>parallel_grover.ads</code>)</h4>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode ada"><code class="sourceCode ada"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">generic</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">type</span> Real <span class="kw">is</span> <span class="kw">digits</span> <span class="op">&lt;&gt;</span>;</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">package</span> Parallel_Grover <span class="kw">is</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">type</span> Amplitude_Array <span class="kw">is</span> <span class="kw">array</span> <span class="op">(</span>Positive <span class="kw">range</span> <span class="op">&lt;&gt;)</span> <span class="kw">of</span> Real;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>   <span class="co">-- Initializes the proposition amplitudes to the uniform state: 1/sqrt(N)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>   <span class="kw">procedure</span> Initialize <span class="op">(</span>Amplitudes <span class="op">:</span> <span class="kw">out</span> Amplitude_Array<span class="op">)</span> <span class="kw">with</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>     Pre <span class="op">=&gt;</span> Amplitudes&#39;Length <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> <span class="kw">then</span> Amplitudes&#39;First <span class="op">=</span> <span class="dv">1</span>;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>   <span class="co">-- Executes one exact discrete Grover iteration step in parallel</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>   <span class="kw">procedure</span> Discrete_Grover_Step <span class="op">(</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      Amplitudes <span class="op">:</span> <span class="kw">in</span> <span class="kw">out</span> Amplitude_Array;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      Target     <span class="op">:</span> <span class="kw">in</span> Positive</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>   <span class="op">)</span> <span class="kw">with</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>     Pre <span class="op">=&gt;</span> Amplitudes&#39;Length <span class="op">&gt;</span> <span class="dv">0</span> </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">and</span> <span class="kw">then</span> Amplitudes&#39;First <span class="op">=</span> <span class="dv">1</span> </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">and</span> <span class="kw">then</span> Target <span class="kw">in</span> Amplitudes&#39;Range;</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> Parallel_Grover;</span></code></pre></div>
+<h4 id="package-body-parallel_grover.adb">2. Package Body
+(<code>parallel_grover.adb</code>)</h4>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode ada"><code class="sourceCode ada"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">with</span> Ada<span class="op">.</span>Numerics<span class="op">.</span>Generic_Elementary_Functions;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">package</span> <span class="kw">body</span> Parallel_Grover <span class="kw">is</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">package</span> Math <span class="kw">is</span> <span class="kw">new</span> Ada<span class="op">.</span>Numerics<span class="op">.</span>Generic_Elementary_Functions <span class="op">(</span>Real<span class="op">)</span>;</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">use</span> Math;</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>   <span class="co">-- Parallel divide-and-conquer binary sum reduction: O(log N)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>   <span class="kw">function</span> Parallel_Sum <span class="op">(</span>Amps <span class="op">:</span> Amplitude_Array; Low<span class="op">,</span> High <span class="op">:</span> Positive<span class="op">)</span> <span class="kw">return</span> Real <span class="kw">is</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      Threshold <span class="op">:</span> <span class="kw">constant</span> Positive <span class="op">:=</span> <span class="dv">16</span>; <span class="co">-- Falls back to serial sum on small slices</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>   <span class="kw">begin</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="kw">if</span> High <span class="op">-</span> Low <span class="op">&lt;=</span> Threshold <span class="kw">then</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>         <span class="kw">declare</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            Sum_Val <span class="op">:</span> Real <span class="op">:=</span> <span class="fl">0.0</span>;</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>         <span class="kw">begin</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">for</span> I <span class="kw">in</span> Low <span class="op">..</span> High <span class="kw">loop</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>               Sum_Val <span class="op">:=</span> Sum_Val <span class="op">+</span> Amps <span class="op">(</span>I<span class="op">)</span>;</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">end loop</span>;</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            <span class="kw">return</span> Sum_Val;</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>         <span class="kw">end</span>;</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>      <span class="kw">else</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>         <span class="kw">declare</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>            Mid <span class="op">:</span> <span class="kw">constant</span> Positive <span class="op">:=</span> Low <span class="op">+</span> <span class="op">(</span>High <span class="op">-</span> Low<span class="op">)</span> <span class="op">/</span> <span class="dv">2</span>;</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">task</span> <span class="kw">type</span> Left_Worker <span class="kw">is</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>               <span class="kw">entry</span> Get_Result <span class="op">(</span>Val <span class="op">:</span> <span class="kw">out</span> Real<span class="op">)</span>;</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>            <span class="kw">end</span> Left_Worker;</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>            <span class="kw">task</span> <span class="kw">body</span> Left_Worker <span class="kw">is</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>               Local_Val <span class="op">:</span> Real;</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>            <span class="kw">begin</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>               Local_Val <span class="op">:=</span> Parallel_Sum <span class="op">(</span>Amps<span class="op">,</span> Low<span class="op">,</span> Mid<span class="op">)</span>;</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>               <span class="kw">accept</span> Get_Result <span class="op">(</span>Val <span class="op">:</span> <span class="kw">out</span> Real<span class="op">)</span> <span class="kw">do</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>                  Val <span class="op">:=</span> Local_Val;</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>               <span class="kw">end</span> Get_Result;</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>            <span class="kw">end</span> Left_Worker;</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>            Left_Task <span class="op">:</span> Left_Worker;</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>            Right_Sum <span class="op">:</span> Real;</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>            Left_Sum  <span class="op">:</span> Real;</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>         <span class="kw">begin</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>            Right_Sum <span class="op">:=</span> Parallel_Sum <span class="op">(</span>Amps<span class="op">,</span> Mid <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> High<span class="op">)</span>;</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>            Left_Task<span class="op">.</span>Get_Result <span class="op">(</span>Left_Sum<span class="op">)</span>;</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>            <span class="kw">return</span> Left_Sum <span class="op">+</span> Right_Sum;</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>         <span class="kw">end</span>;</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>      <span class="kw">end if</span>;</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>   <span class="kw">end</span> Parallel_Sum;</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>   <span class="co">----------------</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>   <span class="co">-- Initialize --</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>   <span class="co">----------------</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>   <span class="kw">procedure</span> Initialize <span class="op">(</span>Amplitudes <span class="op">:</span> <span class="kw">out</span> Amplitude_Array<span class="op">)</span> <span class="kw">is</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>      N_Factor <span class="op">:</span> <span class="kw">constant</span> Real <span class="op">:=</span> <span class="fl">1.0</span> <span class="op">/</span> Sqrt <span class="op">(</span>Real <span class="op">(</span>Amplitudes&#39;Length<span class="op">))</span>;</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>   <span class="kw">begin</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>      parallel <span class="kw">for</span> I <span class="kw">in</span> Amplitudes&#39;Range <span class="kw">loop</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>         Amplitudes <span class="op">(</span>I<span class="op">)</span> <span class="op">:=</span> N_Factor;</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>      <span class="kw">end loop</span>;</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>   <span class="kw">end</span> Initialize;</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>   <span class="co">--------------------------</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>   <span class="co">-- Discrete_Grover_Step --</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>   <span class="co">--------------------------</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>   <span class="kw">procedure</span> Discrete_Grover_Step <span class="op">(</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>      Amplitudes <span class="op">:</span> <span class="kw">in</span> <span class="kw">out</span> Amplitude_Array;</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>      Target     <span class="op">:</span> <span class="kw">in</span> Positive</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>   <span class="op">)</span> <span class="kw">is</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>      Temp_Amps <span class="op">:</span> Amplitude_Array <span class="op">(</span>Amplitudes&#39;Range<span class="op">)</span>;</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>      Mean_Amp  <span class="op">:</span> Real;</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>   <span class="kw">begin</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>      <span class="co">-- 1. Parallel Oracle Phase Reflection: O(1)</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>      parallel <span class="kw">for</span> I <span class="kw">in</span> Amplitudes&#39;Range <span class="kw">loop</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>         <span class="kw">if</span> I <span class="op">=</span> Target <span class="kw">then</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>            Temp_Amps <span class="op">(</span>I<span class="op">)</span> <span class="op">:=</span> <span class="op">-</span>Amplitudes <span class="op">(</span>I<span class="op">)</span>;</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>         <span class="kw">else</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>            Temp_Amps <span class="op">(</span>I<span class="op">)</span> <span class="op">:=</span> Amplitudes <span class="op">(</span>I<span class="op">)</span>;</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>         <span class="kw">end if</span>;</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>      <span class="kw">end loop</span>;</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>      <span class="co">-- 2. Parallel Mean Computation: O(log N)</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>      Mean_Amp <span class="op">:=</span> Parallel_Sum <span class="op">(</span>Temp_Amps<span class="op">,</span> Temp_Amps&#39;First<span class="op">,</span> Temp_Amps&#39;Last<span class="op">)</span> <span class="op">/</span> Real <span class="op">(</span>Temp_Amps&#39;Length<span class="op">)</span>;</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>      <span class="co">-- 3. Parallel Reflection-about-the-mean: O(1)</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>      parallel <span class="kw">for</span> I <span class="kw">in</span> Amplitudes&#39;Range <span class="kw">loop</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>         Amplitudes <span class="op">(</span>I<span class="op">)</span> <span class="op">:=</span> <span class="op">(</span><span class="fl">2.0</span> <span class="op">*</span> Mean_Amp<span class="op">)</span> <span class="op">-</span> Temp_Amps <span class="op">(</span>I<span class="op">)</span>;</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>      <span class="kw">end loop</span>;</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>   <span class="kw">end</span> Discrete_Grover_Step;</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> Parallel_Grover;</span></code></pre></div>
+<h4 id="main-driver-program-run_parallel_grover.adb">3. Main Driver
+Program (<code>run_parallel_grover.adb</code>)</h4>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode ada"><code class="sourceCode ada"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">with</span> Parallel_Grover;</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">with</span> Ada<span class="op">.</span>Text_IO;</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">with</span> Ada<span class="op">.</span>Real_Time;</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">with</span> Ada<span class="op">.</span>Numerics<span class="op">.</span>Generic_Elementary_Functions;</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">procedure</span> Run_Parallel_Grover <span class="kw">is</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>   <span class="kw">use</span> Ada<span class="op">.</span>Real_Time;</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>   <span class="kw">type</span> Precision_Real <span class="kw">is</span> <span class="kw">digits</span> <span class="dv">15</span>;</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>   <span class="kw">package</span> Real_IO <span class="kw">is</span> <span class="kw">new</span> Ada<span class="op">.</span>Text_IO<span class="op">.</span>Float_IO <span class="op">(</span>Precision_Real<span class="op">)</span>;</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>   <span class="kw">package</span> Int_IO <span class="kw">is</span> <span class="kw">new</span> Ada<span class="op">.</span>Text_IO<span class="op">.</span>Integer_IO <span class="op">(</span><span class="dt">Integer</span><span class="op">)</span>;</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>   <span class="kw">package</span> Math <span class="kw">is</span> <span class="kw">new</span> Ada<span class="op">.</span>Numerics<span class="op">.</span>Generic_Elementary_Functions <span class="op">(</span>Precision_Real<span class="op">)</span>;</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>   <span class="kw">package</span> Solver <span class="kw">is</span> <span class="kw">new</span> Parallel_Grover <span class="op">(</span>Precision_Real<span class="op">)</span>;</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>   <span class="kw">use</span> Solver;</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>   <span class="co">-- Database configuration</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>   N              <span class="op">:</span> <span class="kw">constant</span> Positive <span class="op">:=</span> <span class="dv">1024</span>; <span class="co">-- Database scale (1024 propositions)</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>   Target_Index   <span class="op">:</span> <span class="kw">constant</span> Positive <span class="op">:=</span> <span class="dv">712</span>;  <span class="co">-- Searching for index 712</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>   Amplitudes     <span class="op">:</span> Amplitude_Array <span class="op">(</span><span class="dv">1</span> <span class="op">..</span> N<span class="op">)</span>;</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>   <span class="co">-- Analytical iteration scale: floor(pi/4 * sqrt(N))</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>   Num_Iterations <span class="op">:</span> <span class="kw">constant</span> Positive <span class="op">:=</span> Positive <span class="op">(</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>      Precision_Real&#39;Floor <span class="op">(</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>         <span class="op">(</span>Ada<span class="op">.</span>Numerics<span class="op">.</span>Pi <span class="op">/</span> <span class="fl">4.0</span><span class="op">)</span> <span class="op">*</span> Math<span class="op">.</span>Sqrt <span class="op">(</span>Precision_Real <span class="op">(</span>N<span class="op">))</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>      <span class="op">)</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>   <span class="op">)</span>;</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>   Start_Time<span class="op">,</span> End_Time <span class="op">:</span> Time;</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>   Elapsed              <span class="op">:</span> Time_Span;</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="kw">begin</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>   Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put_Line <span class="op">(</span><span class="st">&quot;Starting Parallel Digital Implementation of Grover&#39;s Algorithm...&quot;</span><span class="op">)</span>;</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>   Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put_Line <span class="op">(</span><span class="st">&quot;Propositions (N):   &quot;</span> <span class="op">&amp;</span> Positive&#39;Image <span class="op">(</span>N<span class="op">))</span>;</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>   Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put_Line <span class="op">(</span><span class="st">&quot;Target Index:       &quot;</span> <span class="op">&amp;</span> Positive&#39;Image <span class="op">(</span>Target_Index<span class="op">))</span>;</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>   Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put_Line <span class="op">(</span><span class="st">&quot;Target Iterations:  &quot;</span> <span class="op">&amp;</span> Positive&#39;Image <span class="op">(</span>Num_Iterations<span class="op">))</span>;</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>   Ada<span class="op">.</span>Text_IO<span class="op">.</span>New_Line;</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>   Start_Time <span class="op">:=</span> Clock;</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>   <span class="co">-- Initialize uniform superposition of logical propositions</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>   Initialize <span class="op">(</span>Amplitudes<span class="op">)</span>;</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>   <span class="co">-- Execute discrete-time parallel updates</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>   <span class="kw">for</span> Iter <span class="kw">in</span> <span class="dv">1</span> <span class="op">..</span> Num_Iterations <span class="kw">loop</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>      Discrete_Grover_Step <span class="op">(</span>Amplitudes<span class="op">,</span> Target_Index<span class="op">)</span>;</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>   <span class="kw">end loop</span>;</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>   End_Time <span class="op">:=</span> Clock;</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>   Elapsed  <span class="op">:=</span> End_Time <span class="op">-</span> Start_Time;</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>   <span class="co">-- Output performance metrics</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>   Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put_Line <span class="op">(</span><span class="st">&quot;Search complete.&quot;</span><span class="op">)</span>;</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>   Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put <span class="op">(</span><span class="st">&quot;Elapsed Wall-Clock Computation Time: &quot;</span><span class="op">)</span>;</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>   Real_IO<span class="op">.</span>Put <span class="op">(</span>Precision_Real <span class="op">(</span>To_Duration <span class="op">(</span>Elapsed<span class="op">)),</span> Fore <span class="op">=&gt;</span> <span class="dv">1</span><span class="op">,</span> Aft <span class="op">=&gt;</span> <span class="dv">6</span><span class="op">,</span> Exp <span class="op">=&gt;</span> <span class="dv">0</span><span class="op">)</span>;</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>   Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put_Line <span class="op">(</span><span class="st">&quot; seconds.&quot;</span><span class="op">)</span>;</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>   Ada<span class="op">.</span>Text_IO<span class="op">.</span>New_Line;</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>   <span class="co">-- Output results</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>   Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put_Line <span class="op">(</span><span class="st">&quot;Final Proposition Amplitudes:&quot;</span><span class="op">)</span>;</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>   Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put_Line <span class="op">(</span><span class="st">&quot;Index   |  Amplitude  | Probability (Amplitude^2)&quot;</span><span class="op">)</span>;</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>   Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put_Line <span class="op">(</span><span class="st">&quot;--------+-------------+---------------------------&quot;</span><span class="op">)</span>;</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>   <span class="kw">for</span> I <span class="kw">in</span> Amplitudes&#39;Range <span class="kw">loop</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>      <span class="co">-- Output only the bounds and target area to keep console readable</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>      <span class="kw">if</span> I <span class="op">=</span> Target_Index <span class="kw">or</span> I <span class="op">&lt;=</span> <span class="dv">3</span> <span class="kw">or</span> I <span class="op">&gt;=</span> N <span class="op">-</span> <span class="dv">2</span> <span class="kw">then</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>         Int_IO<span class="op">.</span>Put <span class="op">(</span>I<span class="op">,</span> Width <span class="op">=&gt;</span> <span class="dv">5</span><span class="op">)</span>;</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>         Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put <span class="op">(</span><span class="st">&quot;   | &quot;</span><span class="op">)</span>;</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>         Real_IO<span class="op">.</span>Put <span class="op">(</span>Amplitudes <span class="op">(</span>I<span class="op">),</span> Fore <span class="op">=&gt;</span> <span class="dv">3</span><span class="op">,</span> Aft <span class="op">=&gt;</span> <span class="dv">8</span><span class="op">,</span> Exp <span class="op">=&gt;</span> <span class="dv">0</span><span class="op">)</span>;</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>         Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put <span class="op">(</span><span class="st">&quot;  | &quot;</span><span class="op">)</span>;</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>         Real_IO<span class="op">.</span>Put <span class="op">(</span>Amplitudes <span class="op">(</span>I<span class="op">)</span> <span class="op">**</span> <span class="dv">2</span><span class="op">,</span> Fore <span class="op">=&gt;</span> <span class="dv">3</span><span class="op">,</span> Aft <span class="op">=&gt;</span> <span class="dv">8</span><span class="op">,</span> Exp <span class="op">=&gt;</span> <span class="dv">0</span><span class="op">)</span>;</span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>         <span class="kw">if</span> I <span class="op">=</span> Target_Index <span class="kw">then</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>            Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put <span class="op">(</span><span class="st">&quot;  &lt;-- Target Identified&quot;</span><span class="op">)</span>;</span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>         <span class="kw">end if</span>;</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>         Ada<span class="op">.</span>Text_IO<span class="op">.</span>New_Line;</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>      <span class="kw">elsif</span> I <span class="op">=</span> Target_Index <span class="op">-</span> <span class="dv">1</span> <span class="kw">or</span> I <span class="op">=</span> Target_Index <span class="op">+</span> <span class="dv">1</span> <span class="kw">then</span></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>         Ada<span class="op">.</span>Text_IO<span class="op">.</span>Put_Line <span class="op">(</span><span class="st">&quot;  ...   |     ...     |            ...&quot;</span><span class="op">)</span>;</span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>      <span class="kw">end if</span>;</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>   <span class="kw">end loop</span>;</span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span> Run_Parallel_Grover;</span></code></pre></div>
+<hr />
+<h3 id="compilation-and-execution">23.3 Compilation and Execution</h3>
+<p>To compile this parallel digital implementation of Grover’s
+algorithm:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gnatmake</span> <span class="at">-O3</span> <span class="at">-gnat2022</span> run_parallel_grover.adb</span></code></pre></div>
+</body>
+</html>
